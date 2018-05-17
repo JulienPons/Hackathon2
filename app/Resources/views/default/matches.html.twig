@@ -1,29 +1,26 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="container-fluid">
-        <div class="row ligne1">
-            <div class="col">
-                One of three columns
-            </div>
+    <div class="container-fluid no-gutters bg01">
+        <div class="row ligne1 no-gutters">
+            <div class="col-md-6">
 
-        </div>
-
-        <div class="row ligne2">
-            <div class="col">
-                One of three columns
             </div>
-            <div class="col ">
-                One of three columns
-            </div>
-            <div class="col">
-                One of three columns
+            <div class="col-md-6">
+                <h1 class="titlePage text-white">Match !</h1>
+                <p>Height:</p>
             </div>
         </div>
 
-        <div class="row ligne3">
-            <div class="col">
-                One of three columns
+        <div class="row ligne2 no-gutters align-items-center">
+            <div class="col-md-6 offset-md-3">
+                <div class="input-group my-auto">
+                    <div class="form-control">Salut ça va?</div>
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary text-white" type="button">OUI !!!</button>
+                        <button class="btn btn-outline-secondary text-white" type="button">NON !</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
