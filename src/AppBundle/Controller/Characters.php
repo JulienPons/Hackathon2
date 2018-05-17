@@ -27,9 +27,19 @@ class Characters
         $response = $client->request('GET', 'all.json');
         $body = $response->getBody();
         $assoc = true;
-        $this->characters = json_decode($body,$assoc);
+        $characters = json_decode($body,$assoc);
+        shuffle($characters);
 
-        return $this->characters;
+        foreach ($characters as $key => $character) {
+            if (!empty($characters[$key]['affiliations'])) {
+                if (is_array($characters[$key]['affiliations'])) {
+                    $characters[$key]['lastAffiliation'] = $characters[$key]['affiliations'][count($characters[$key]['affiliations'])-1];
+                } else {
+                    $characters[$key]['lastAffiliation'] = $characters[$key]['affiliations'];
+                }
+            }
+        }
+        return $characters;
     }
 
     public function getOneByID($id) : array
@@ -205,5 +215,44 @@ class Characters
         }
         sort($values);
         return $values;
+
+    }
+
+    /**
+     * select characters with a very different height
+     *
+     * @param array $characters
+     * @param float $height
+     *
+     * @return array
+     */
+    public function getAllDifferentByHeight(array $characters, float $height) : array
+    {
+        $newCharacters = [];
+        foreach ($characters as $character) {
+            if (!empty($character['height']) && ( ($height / $character['height']) > 1.125 || ($height / $character['height']) < 0.8 )) {
+                $newCharacters[] = $character;
+            }
+        }
+        return $newCharacters;
+    }
+
+    /**
+     * select characters with a very different mass
+     *
+     * @param array $characters
+     * @param float $mass
+     *
+     * @return array
+     */
+    public function getAllDifferentByMass(array $characters, float $mass) : array
+    {
+        $newCharacters = [];
+        foreach ($characters as $character) {
+            if (!empty($character['mass']) && ( ($mass / $character['mass']) > 3 || ($mass / $character['mass']) < 0.33 )) {
+                $newCharacters[] = $character;
+            }
+        }
+        return $newCharacters;
     }
 }

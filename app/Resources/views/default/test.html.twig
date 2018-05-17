@@ -2,7 +2,8 @@
 
 {% block body %}
     {% for character in characters %}
-        <p>{{ character }}
-        </p>
+        {% if character.mass is defined %}
+            <div>{{ character.mass }}</div>
+        {% endif %}
     {% endfor %}
 {% endblock %}
