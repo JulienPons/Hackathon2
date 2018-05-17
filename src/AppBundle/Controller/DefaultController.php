@@ -110,7 +110,7 @@ class DefaultController extends Controller
     {
         $charactersManager = new Characters();
         $allCharacters = $charactersManager->getAll();
-        $characters = $charactersManager->getExtractByParametersAndValues($allCharacters, 'species',['human','droid']);
+        $characters = $charactersManager->getValuesByParameter($allCharacters,'species');
 
         return $this->render('default/test.html.twig', [
             'characters' => $characters,
