@@ -472,7 +472,15 @@ h2 {
 
 /* Début de Feuille de style Choices */
 .choices-card {
-    height: 700px;
+    background-color: rgba(100, 100, 100, 0.8);
+}
+
+.choices-modal{
+    background-color: beige;
+}
+
+.bg-choices{
+    background-image: url("https://images8.alphacoders.com/401/401478.jpg");
 }
 /* Fin de Feuille de style Choices */
 
