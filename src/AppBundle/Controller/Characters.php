@@ -27,10 +27,19 @@ class Characters
         $response = $client->request('GET', 'all.json');
         $body = $response->getBody();
         $assoc = true;
-        $this->characters = json_decode($body,$assoc);
-        shuffle($this->characters);
+        $characters = json_decode($body,$assoc);
+        shuffle($characters);
 
-        return $this->characters;
+        foreach ($characters as $key => $character) {
+            if (!empty($characters[$key]['affiliations'])) {
+                if (is_array($characters[$key]['affiliations'])) {
+                    $characters[$key]['lastAffiliation'] = $characters[$key]['affiliations'][count($characters[$key]['affiliations'])-1];
+                } else {
+                    $characters[$key]['lastAffiliation'] = $characters[$key]['affiliations'];
+                }
+            }
+        }
+        return $characters;
     }
 
     public function getOneByID($id) : array
