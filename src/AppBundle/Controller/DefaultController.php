@@ -59,6 +59,9 @@ class DefaultController extends Controller
             if (!empty($_POST['height'])) {
                 $characters = $charactersManager->getAllDifferentByHeight($characters,$_POST['height']);
             }
+            if (!empty($_POST['mass'])) {
+                $characters = $charactersManager->getAllDifferentByMass($characters, $_POST['mass']);
+            }
             return $this->render('default/choices.html.twig', [
                 'characters' => $characters,
             ]);
