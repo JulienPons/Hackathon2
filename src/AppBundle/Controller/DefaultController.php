@@ -109,7 +109,9 @@ class DefaultController extends Controller
     public function testAction(Request $request)
     {
         $charactersManager = new Characters();
-        $characters = $charactersManager->getAll();
+        $allCharacters = $charactersManager->getAll();
+        $characters = $charactersManager->getAllDifferentByMass($allCharacters,'2');
+
         return $this->render('default/test.html.twig', [
             'characters' => $characters,
         ]);
