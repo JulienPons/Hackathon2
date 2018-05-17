@@ -11,12 +11,55 @@
 {% block body %}
     <div class="container-fluid no-gutters bg01">
         <div class="row ligne1 no-gutters">
-            <div class="col-md-6">
-
+            <div class="col-md-6 text-right pt-6">
+                {% if character.image is defined %}
+                    <img src="{{ character.image }}" class="img-fluidmax img-fluidmax ">
+                {% endif %}
             </div>
             <div class="col-md-6">
                 <h1 class="titlePage text-white">Match !</h1>
-                <p>Height:</p>
+                <p class="text-white">
+                    {% if character.name is defined %}
+                        Name: {{ character.name }} <br>
+                    {% endif %}
+
+                    {% if character.height is defined %}
+                        Height: {{ character.height }} m <br>
+                    {% endif %}
+
+                    {% if character.mass is defined %}
+                        Mass: {{ character.mass }} Kg <br>
+                    {% endif %}
+
+                    {% if character.gender is defined %}
+                        Gender: {{ character.gender }}  <br>
+                    {% endif %}
+
+                    {% if character.hairColor is defined %}
+                        Hair color: {{ character.hairColor }}  <br>
+                    {% endif %}
+
+                    {% if character.eyeColor is defined %}
+                        Eye color: {{ character.eyeColor }}  <br>
+                    {% endif %}
+
+                    {% if character.homeworld is defined %}
+                        Homeworld: {{ character.homeworld }} <br>
+                    {% endif %}
+
+                    {% if character.bornLocation is defined %}
+                        Born location: {{ character.bornLocation }} <br>
+                    {% endif %}
+
+                    {% if character.species is defined %}
+                        species: {{ character.species }} <br>
+                    {% endif %}
+
+                    {% if character.affiliations is defined %}
+                        Affiliations:  <br>
+                    {% endif %}
+                </p>
+                <p class="text-white">{{ dump(character) }}</p>
             </div>
         </div>
 

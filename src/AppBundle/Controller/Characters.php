@@ -6,6 +6,9 @@ use GuzzleHttp\Client;
 
 class Characters
 {
+    const EMPIRE = 'Empire';
+    const REPUBLIC = 'Republic';
+
     private $characters = [];
 
     public function __toString ()
@@ -57,9 +60,17 @@ class Characters
     public function getExtractByAffiliation(array $characters, string $affiliation) : array
     {
         $newCharacters = [];
+        if ($affiliation == $this::EMPIRE) {
+            $ennemy = $this::REPUBLIC;
+        } else {
+            $ennemy = $this::EMPIRE;
+        }
         foreach ($characters as $id => $character) {
             if (isset($character['affiliations'])) {
                 for ($i = count($character['affiliations']) - 1; $i >= 0; $i--) {
+                    if (strpos($character['affiliations'][$i],$ennemy) !== false) {
+                        break;
+                    }
                     if (strpos($character['affiliations'][$i],$affiliation) !== false) {
                         $newCharacters[] = $character;
                         break;
@@ -89,13 +100,11 @@ class Characters
                     for ($i = count($character[$parameter]) - 1; $i >= 0; $i--) {
                         if (strpos($character[$parameter][$i], $value) !== false) {
                             $newCharacters[] = $character;
-                            break;
                         }
                     }
                 } else {
                     if (strpos($character[$parameter], $value) !== false) {
                         $newCharacters[] = $character;
-                        break;
                     }
                 }
             }
@@ -103,28 +112,109 @@ class Characters
         return $newCharacters;
     }
 
-    /*    public function getAllByParameter($key, $value) : array
-        {
-            $allCharacters = new Characters();
-            $characters = $allCharacters->getAll();
-
-            $newCharacters = [];
-            foreach ($characters as $id => $character) {
-                for ($i = 0; $i < count($character); $i++) {
-                    if (isset($character[$key])) {
-                        if (is_array($character[$key])) {
-                            for ($j = count($character[$key]) - 1; $j >= 0; $j++) {
-
-                            }
-                        } else {
+    /**
+     * return all possible characters that have a specific string value
+     *      for a specified first level paramater
+     *
+     * @param array $characters
+     * @param string $parameter
+     * @param string $value
+     *
+     * @return array
+     */
+    public function getExtractByParameterAndInverseOfValue(array $characters, string $parameter, string $value) : array
+    {
+        $newCharacters = [];
+        foreach ($characters as $id => $character) {
+            if (isset($character[$parameter])) {
+                if (is_array($character[$parameter])) {
+                    for ($i = count($character[$parameter]) - 1; $i >= 0; $i--) {
+                        if (strpos($character[$parameter][$i], $value) === false) {
                             $newCharacters[] = $character;
                         }
                     }
+                } else {
+                    if (strpos($character[$parameter], $value) === false) {
+                        $newCharacters[] = $character;
+                    }
                 }
             }
-
-            return $this->characters;
         }
-    */
+        return $newCharacters;
+    }
+
+    /**
+     * add more characters to the existing array if they are not duplicates
+     *
+     * @param array $characters
+     * @param array $moreCharacters
+     *
+     * @return array
+     */
+    public function setExtractByDuplicates(array $characters, array $moreCharacters) : array {
+        $ids = [];
+        if (count($characters) !== 0) {
+            foreach ($characters as $character) {
+                $ids[] = $character['id'];
+            }
+        }
+
+        $characters = [];
+
+        if (count($moreCharacters) > 1) {
+            foreach ($moreCharacters as $moreCharacter) {
+                if (!in_array($moreCharacter['id'],$ids) || $ids == []) {
+                    $characters[] = $moreCharacter;
+                }
+            }
+        } elseif (count($moreCharacters) == 1) {
+            if (!in_array($moreCharacters['id'],$ids) || $ids == []) {
+                $characters[] = $moreCharacters;
+            }
+        }
+
+        return $characters;
+    }
+
+    /**
+     * return all possible characters that have at least one of specifics string values
+     *      for at least one of the specified first level paramaters
+     *
+     * @param array $characters
+     * @param mixed $parameters
+     * @param mixed $values
+     *
+     * @return array
+     */
+    public function getExtractByParametersAndValues(array $characters, $parameters, $values) : array
+    {
+        $charactersManager = new Characters();
+        $newCharacters = $characters;
+        if (is_array($parameters)) {
+            foreach ($parameters as $parameter) {
+                if (is_array($values)) {
+                    foreach ($values as $value) {
+                        $tempCharacters = $charactersManager->getExtractByParameterAndValue($newCharacters, $parameter, $value);
+                        $newCharacters = $charactersManager->setExtractByDuplicates($newCharacters, $tempCharacters);
+                    }
+                } else {
+                    $tempCharacters = $charactersManager->getExtractByParameterAndValue($newCharacters, $parameter, $values);
+                    $newCharacters = $charactersManager->setExtractByDuplicates($newCharacters, $tempCharacters);
+                }
+            }
+        } else {
+            if (is_array($values)) {
+                foreach ($values as $value) {
+                    $tempCharacters = $charactersManager->getExtractByParameterAndValue($newCharacters, $parameters, $value);
+                    $newCharacters = $charactersManager->setExtractByDuplicates($newCharacters, $tempCharacters);
+                }
+            } else {
+                $tempCharacters = $charactersManager->getExtractByParameterAndValue($newCharacters, $parameters, $values);
+                $newCharacters = $charactersManager->setExtractByDuplicates($newCharacters, $tempCharacters);
+            }
+        }
+
+        return $newCharacters;
+    }
 
 }

@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Controller\Characters;
 use GuzzleHttp\Client;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 class DefaultController extends Controller
 {
@@ -46,10 +47,20 @@ class DefaultController extends Controller
     }
     /**
      * @Route("/forbidden", name="forbidden")
+     * @Method({"GET","POST"})
      */
     public function forbiddenAction(Request $request)
     {
-        // replace this example code with whatever you need
+        if (!empty($_POST['affiliations'])) {
+            $charactersManager = new Characters();
+            $allCharacters = $charactersManager->getAll();
+            $characters = $charactersManager->getExtractByAffiliation($allCharacters,$_POST['affiliations']);
+
+            return $this->render('default/choices.html.twig', [
+                'characters' => $characters,
+            ]);
+        }
+
         return $this->render('default/forbidden.html.twig');
     }
     /**
@@ -73,14 +84,30 @@ class DefaultController extends Controller
             'characters' => $characters,
         ]);
     }
-
+/*
     /**
      * @Route("/matches", name="matches")
      */
-    public function matchesAction(Request $request)
+/*
+    public function matchesAction( Request $request)
     {
+
         // replace this example code with whatever you need
         return $this->render('default/matches.html.twig');
+    }*/
+
+    /**
+     * @Route("/matches/{id}", name="matches", requirements={"\d+"})
+     */
+    public function matchesAction($id, Request $request)
+    {
+        $charactersManager = new Characters();
+        $character = $charactersManager->getOneByID($id);
+
+
+        // replace this example code with whatever you need
+        return $this->render('default/matches.html.twig',[
+            'character' => $character]);
     }
 
     /**
@@ -90,11 +117,10 @@ class DefaultController extends Controller
     {
         $charactersManager = new Characters();
         $allCharacters = $charactersManager->getAll();
-        $empireCharacters = $charactersManager->getExtractByAffiliation($allCharacters,'Republic');
-        $republicCharacters = $charactersManager->getExtractByParameterAndValue($allCharacters, 'affiliations','Empire');
+        $characters = $charactersManager->getExtractByParametersAndValues($allCharacters, 'species',['human','droid']);
 
         return $this->render('default/test.html.twig', [
-            'characters' => $republicCharacters,
+            'characters' => $characters,
         ]);
     }
 
@@ -106,5 +132,7 @@ class DefaultController extends Controller
         // replace this example code with whatever you need
         return $this->render('default/credit.html.twig');
     }
+
+
 
 }
