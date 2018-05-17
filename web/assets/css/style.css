@@ -398,6 +398,7 @@ h2 {
 
 .bg01{
     background-image: url("https://wallup.net/wp-content/uploads/2015/12/103109-Star_Wars_Episode_VI_-_The_Return_of_the_Jedi-Star_Wars.jpg");
+    height: 100vh;
 }
 
 .pt-6{
@@ -407,6 +408,7 @@ h2 {
 
 .imgSeize{
     height: 50vh;
+    width: auto;
 }
 
 .frontSeizeCard{

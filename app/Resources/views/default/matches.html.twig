@@ -9,9 +9,60 @@
 {% endblock %}
 
 {% block body %}
-    <div class="container-fluid no-gutters bg01">
-        <div class="row ligne1 no-gutters">
-            <div class="col-md-6 text-center pt-6">
+    <div class="bg01">
+        <div class="container ">
+            <div class="row ligne1 no-gutters">
+                <div class="col-md-5 text-center choices-card p-0 m-3">
+                    <div class="card bg-grey-choices ">
+                        <div class="card-header">
+                            <h5>{{ character.name }}</h5>
+                        </div>
+                        <div class="card-body">
+                            <img class="imgSeize" src="{{ character.image }}" alt="Card image cap">
+                            <li class="list-group-item p-1 frontSeizeCard text-left bg-grey-choices ">
+                                {% if character.height is defined %}
+                                    Height: {{ character.height }} m <br>
+                                {% endif %}
+
+                                {% if character.mass is defined %}
+                                    Mass: {{ character.mass }} Kg <br>
+                                {% endif %}
+
+                                {% if character.gender is defined %}
+                                    Gender: {{ character.gender }}  <br>
+                                {% endif %}
+
+                                {% if character.hairColor is defined %}
+                                    Hair color: {{ character.hairColor }}  <br>
+                                {% endif %}
+
+                                {% if character.eyeColor is defined %}
+                                    Eye color: {{ character.eyeColor }}  <br>
+                                {% endif %}
+
+                                {% if character.homeworld is defined %}
+                                    Homeworld: {{ character.homeworld }} <br>
+                                {% endif %}
+
+                                {% if character.bornLocation is defined %}
+                                    Born location: {{ character.bornLocation }} <br>
+                                {% endif %}
+
+                                {% if character.species is defined %}
+                                    species: {{ character.species }} <br>
+                                {% endif %}
+
+                                {% if character.affiliations is defined %}
+                                    Affiliations: {{ affiliations }} <br>
+                                {% endif %}
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                <!--
                 <div class="card" style="width: 22rem;">
                     <div class="card-body p-1 frontSeizeCard">
                         {% if character.name is defined %}
@@ -114,7 +165,7 @@
                 </p>
             </div>
         </div>
--->
+
 
         <div class="col-md-6 offset-md-3">
             <div class="input-group my-auto">
@@ -125,5 +176,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 {% endblock %}
