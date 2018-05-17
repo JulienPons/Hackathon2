@@ -34,6 +34,31 @@ class DefaultController extends Controller
      */
     public function xenophiliacAction(Request $request)
     {
+        $charactersManager = new Characters();
+        $allCharacters = $charactersManager->getAll();
+
+        if (!empty($_POST['affiliations'])) {
+            $characters = $charactersManager->getExtractByAffiliation($allCharacters,$_POST['affiliations']);
+            if (!empty($_POST['height'])) {
+                $characters = $charactersManager->getAllDifferentByHeight($characters,$_POST['height']);
+            }
+            if (!empty($_POST['mass'])) {
+                $characters = $charactersManager->getAllDifferentByMass($characters, $_POST['mass']);
+            }
+            return $this->render('default/xenophiliac.html.twig', [
+                'characters' => $characters,
+            ]);
+        }
+
+        $species = $charactersManager->getValuesByParameter($allCharacters,'species');
+        $homeworld = $charactersManager->getValuesByParameter($allCharacters,'homeworld');
+
+        return $this->render('default/xenophiliac.html.twig', [
+            'species' => $species,
+            'homeworld' => $homeworld,
+        ]);
+
+
         // replace this example code with whatever you need
         return $this->render('default/xenophiliac.html.twig');
     }
@@ -42,6 +67,7 @@ class DefaultController extends Controller
      */
     public function objectumSexualAction(Request $request)
     {
+
         // replace this example code with whatever you need
         return $this->render('default/objectum_sexual.html.twig');
     }
