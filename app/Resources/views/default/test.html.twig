@@ -2,8 +2,8 @@
 
 {% block body %}
     {% for character in characters %}
-        {% if character.height is defined %}
-            <div>{{ character.height }}</div>
+        {% if character.lastAffiliation is defined %}
+            <div>{{ character.lastAffiliation }}</div>
         {% endif %}
     {% endfor %}
 {% endblock %}
