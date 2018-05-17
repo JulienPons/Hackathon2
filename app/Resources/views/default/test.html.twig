@@ -2,10 +2,7 @@
 
 {% block body %}
     {% for character in characters %}
-        <p>{{ character.id }} - {{ character.name }}
-            {% if character.cybernetics is defined %}
-                <span> / {{ character.cybernetics }}</span>
-            {% endif %}
+        <p>{{ character }}
         </p>
     {% endfor %}
 {% endblock %}
