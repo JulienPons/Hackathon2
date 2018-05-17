@@ -24,23 +24,18 @@
                             <input type="text" placeholder="Enter your name" name="name" required>
                         </div>
                         <div class>
-                            <p class="empireDavid mb-2 mt-4">What side are your ?</p>
+                            <p class="empireDavid mb-2 mt-4">On what side are you?</p>
                             <input type="radio" id="contactChoice1"
-                                   name="affiliations" value="Empire">
+                                   name="affiliations" value="Republic">
                             <label for="contactChoice1">Empire</label>
 
                             <input type="radio" id="contactChoice2"
-                                   name="affiliations" value="Republic">
+                                   name="affiliations" value="Empire">
                             <label for="contactChoice2">Republic</label>
                         </div>
                         <div class>
-                            <label for="name"><b>Select your height</b></label>
-                            <select name="Style">
-                                <option value=""></option>
-                                {% for height in heights %}
-                                    <option value="{{ height }}">{{ height }}</option>
-                                {% endfor %}
-                            </select>
+                            <label for="height"><b>Select your height</b></label>
+                            <input type="number" id="height" name="height" value="">
                         </div>
                         <div class>
 
