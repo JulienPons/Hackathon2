@@ -494,26 +494,16 @@ h2 {
 
 /* Début de Feuille de style Choices */
 .choices-card {
-    background-color: rgb(150, 150, 150);
-    border-radius: 0.25rem;
-    width: 425px;
+    border-radius: 0.8rem;
 }
 .bg-grey-choices {
-    background-color: rgb(150, 150, 150);
-}
-
-.choices-modal{
-    background-color: beige;
+    background-color: rgba(150, 150, 150,0.4);
 }
 
 .bg-choices{
     background: url("https://images8.alphacoders.com/401/401478.jpg") no-repeat fixed;
     background-size: 100% 100%;
 
-}
-
-.choices-img-fluidmax{
-   
 }
 
 .no-border-choices {

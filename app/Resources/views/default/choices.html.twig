@@ -19,59 +19,63 @@
         <div class="row justify-content-md-center">
             {% for character in characters %}
                 {% if character.name %}
-                <div class="col-md-5 col-sm-6 text-center choices-card p-0 m-3">
-                        <div class="card bg-grey-choices no-border-choices">
+                <div class="col-md-5 col-sm-6 text-center p-0 m-3">
+                        <div class="card bg-grey-choices no-border-choices choices-card">
                             <div class="card-header border-bottom-choices">
                                 <h5>{{ character.name }}</h5>
                             </div>
                             <div class="card-body d-inline-flex">
-                                <img class="card-img-top choices-img-fluidmax" src="{{ character.image }}" alt="Card image cap">
-                                <ul class="text-left">
+                                <div class="col-md-6">
+                                <img class="card-img-top" src="{{ character.image }}" alt="Card image cap">
+                                </div>
+                                <div class="col-md-6">
+                                <ul class="text-left list-unstyled">
                                     <li>
-                                        <h6>Gender: {{ character.gender }}</h6>
+                                        <h6><i class="swg swg-falcon-o swg-lg"></i> Gender: {{ character.gender }}</h6>
                                     </li>
                                     <li>
-                                        <h6>Specie: {{ character.species }}</h6>
+                                        <h6><i class="swg swg-falcon-o swg-lg"></i> Specie: {{ character.species }}</h6>
                                     </li>
                                     <li>
-                                        <h6>Eye color: {{ character.eyeColor }}</h6>
+                                        <h6><i class="swg swg-falcon-o swg-lg"></i> Eye color: {{ character.eyeColor }}</h6>
                                     </li>
 
                                     {% if character.height is defined %}
                                     <li>
-                                        <h6>Height: {{ character.height }} m</h6>
+                                        <h6><i class="swg swg-falcon-o swg-lg"></i> Height: {{ character.height }} m</h6>
                                     </li>
                                     {% endif %}
                                     {% if character.mass is defined %}
                                     <li>
-                                        <h6> Mass: {{ character.mass }} Kg</h6>
+                                        <h6><i class="swg swg-falcon-o swg-lg"></i> Mass: {{ character.mass }} Kg</h6>
                                     </li>
                                     {% endif %}
                                     {% if character.hairColor is defined %}
                                     <li>
-                                        <h6>Hair color: {{ character.hairColor }}</h6>
+                                        <h6><i class="swg swg-falcon-o swg-lg"></i> Hair color: {{ character.hairColor }}</h6>
                                     </li>
                                     {% endif %}
                                     {% if character.lastHomeworld is defined %}
                                     <li>
-                                        <h6>Homeworld: {{ character.lastHomeworld }}</h6>
+                                        <h6><i class="swg swg-falcon-o swg-lg"></i> Homeworld: {{ character.lastHomeworld }}</h6>
                                     </li>
                                     {% endif %}
                                     {% if character.bornLocation is defined %}
                                     <li>
-                                        <h6>Born location: {{ character.bornLocation }}</h6>
+                                        <h6><i class="swg swg-falcon-o swg-lg"></i> Born location: {{ character.bornLocation }}</h6>
                                     </li>
                                     {% endif %}
                                     {% if character.lastAffiliation is defined %}
                                     <li>
-                                        <h6>Affiliations: {{ character.lastAffiliation }}</h6>
+                                        <h6><i class="swg swg-falcon-o swg-lg"></i> Affiliations: {{ character.lastAffiliation }}</h6>
                                     </li>
                                     {% endif %}
 
-                                    <ol class="p-0">
+                                    <div>
                                         <a class="btn btn-primary" href="/matches/{{ character.id }}"><i class="fas fa-pencil-alt mr-2"></i>Choose</a>
-                                    </ol>
+                                    </div>
                                 </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
