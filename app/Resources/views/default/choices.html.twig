@@ -1,5 +1,70 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    Page Choices
+<div class="container">
+    <div class="section-header">
+        <h1 class="text-center ">May the fuck be in you</h1>
+    </div>
+</div>
+<div class="container">
+    <div class="row justify-content-md-center">
+        {% for character in characters %}
+            {% if character.name %}
+                <div class="col-md-3 col-sm-6 text-center">
+                    <div class="card shadow my-3 choices-card">
+                        <img class="card-img-top" src="{{ character.image }}" alt="Card image cap">
+                        <div class="card-body">
+                            <button type="button" class="btn btn-primary btn-card" data-toggle="modal"
+                                    data-target="#modal{{ character.id }}" name="modal">
+                                Description
+                            </button>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" name="{{ character.id }}" id="{{ character.id }}">
+                                <label class="custom-control-label" for="{{ character.id }}"><h5
+                                            class="h5-card">{{ character.name }}</h5>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="modal{{ character.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title text-center" id="exampleModalLongTitle">{{ character.name }}</h2>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-4 align-items-center">
+                                        <img class="rounded " src="{{ character.image }}">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                     <h4 class="text-center h4-modalTitle">Description</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-6">
+                                        <h6 class="p-pedigree">Sexe</h6>
+                                        <h6 class="p-pedigree">Espèce</h6>
+                                        <h6 class="p-pedigree">Couleur des yeux</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6>{{ character.gender }}</h6>
+                                        <h6>{{ character.species }}</h6>
+                                        <h6>{{ character.eyeColor }}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}
