@@ -177,44 +177,33 @@ class Characters
     }
 
     /**
-     * return all possible characters that have at least one of specifics string values
-     *      for at least one of the specified first level paramaters
+     * return all possible characters that have a specific string value
+     *      for a specified first level paramater
      *
      * @param array $characters
-     * @param mixed $parameters
-     * @param mixed $values
+     * @param string $parameter
      *
      * @return array
      */
-    public function getExtractByParametersAndValues(array $characters, $parameters, $values) : array
+    public function getValuesByParameter(array $characters, string $parameter) : array
     {
-        $charactersManager = new Characters();
-        $newCharacters = $characters;
-        if (is_array($parameters)) {
-            foreach ($parameters as $parameter) {
-                if (is_array($values)) {
-                    foreach ($values as $value) {
-                        $tempCharacters = $charactersManager->getExtractByParameterAndValue($newCharacters, $parameter, $value);
-                        $newCharacters = $charactersManager->setExtractByDuplicates($newCharacters, $tempCharacters);
+        $values = [];
+        foreach ($characters as $id => $character) {
+            if (isset($character[$parameter])) {
+                if (is_array($character[$parameter])) {
+                    for ($i = count($character[$parameter]) - 1; $i >= 0; $i--) {
+                        if (!in_array($character[$parameter][$i],$values)) {
+                            $values[] = $character[$parameter][$i];
+                        }
                     }
                 } else {
-                    $tempCharacters = $charactersManager->getExtractByParameterAndValue($newCharacters, $parameter, $values);
-                    $newCharacters = $charactersManager->setExtractByDuplicates($newCharacters, $tempCharacters);
+                    if (!in_array($character[$parameter],$values)) {
+                        $values[] = $character[$parameter];
+                    }
                 }
-            }
-        } else {
-            if (is_array($values)) {
-                foreach ($values as $value) {
-                    $tempCharacters = $charactersManager->getExtractByParameterAndValue($newCharacters, $parameters, $value);
-                    $newCharacters = $charactersManager->setExtractByDuplicates($newCharacters, $tempCharacters);
-                }
-            } else {
-                $tempCharacters = $charactersManager->getExtractByParameterAndValue($newCharacters, $parameters, $values);
-                $newCharacters = $charactersManager->setExtractByDuplicates($newCharacters, $tempCharacters);
             }
         }
-
-        return $newCharacters;
+        sort($values);
+        return $values;
     }
-
 }
