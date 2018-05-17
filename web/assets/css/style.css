@@ -1,0 +1,27 @@
+
+[class*="col"]
+{
+    border: 2px solid blue;
+    border-radius: 6px;
+    line-height: 10px;
+    color-: red;
+}
+
+[class*="row"]
+{
+    border: 2px solid red;
+    border-radius: 6px;
+    line-height: 10px;
+}
+
+.ligne1{
+    height: 25vh;
+}
+
+.ligne2{
+    height: 50vh;
+}
+
+.ligne3{
+    height: 25vh;
+}
