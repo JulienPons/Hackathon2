@@ -1,3 +1,13 @@
+/* CSS Header */
+.logo-dare{
+    position: absolute;
+    margin-left: 10px;
+    color: black;
+    text-shadow: #FFFF00 1px 1px, #FFFF00 -1px 1px, #FFFF00 -1px -1px, #FFFF00 1px -1px;
+}
+
+/* Fin CSS Header */
+
 /*CSS Page Index*/
 /* NAV BAR JEDI */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
@@ -144,7 +154,7 @@ nav ul li:hover {
     text-shadow: #4df 0px 0px 6px, #4df 0px 0px 10px;
 }
 nav ul li:hover {
-    width: 100%;
+    width: 115%;
     padding: 0px 16px 0px 0px;
     color: black;
 }
@@ -484,7 +494,26 @@ h2 {
 }
 /* Fin de Feuille de style Choices */
 
+/* CSS Page Soulmate */
+.soulmate{
+    background: url(http://longwallpapers.com/Desktop-Wallpaper/star-wars-wallpapers-full-hd-For-Desktop-Wallpaper.jpg) 50% 0 no-repeat fixed;
+    height: 100vh;
+    background-size: cover;
+}
 
+#go-away{
+    color: white;
+    text-shadow: #F00 0px 0px 6px, #F00 0px 0px 10px;
+    width: 1000px;
+    height: 200px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+/* Fin CSS Page Soulmate */
 
 /* Début de Feuille de style Profile */
 body, html {
@@ -571,7 +600,5 @@ input[type=text] {
 input[type=text]:focus {
     width: 100%;
 }
-
-
 /* Fin de Feuille de style Profile */
 
