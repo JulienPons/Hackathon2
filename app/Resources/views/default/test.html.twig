@@ -5,8 +5,6 @@
         <p>{{ character.id }} - {{ character.name }}
             {% if character.cybernetics is defined %}
                 <span> / {{ character.cybernetics }}</span>
-            {% else %}
-                <span></span>
             {% endif %}
         </p>
     {% endfor %}
