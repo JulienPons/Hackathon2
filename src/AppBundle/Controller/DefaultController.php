@@ -52,7 +52,7 @@ class DefaultController extends Controller
     public function testAction(Request $request)
     {
         $allCharacters = new Characters();
-        $characters = $allCharacters->getAll();
+        $characters = $allCharacters->getExtractByAffiliation($allCharacters,'Republic');
 
         return $this->render('default/test.html.twig', [
             'characters' => $characters,
