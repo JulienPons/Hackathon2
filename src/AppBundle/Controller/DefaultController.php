@@ -66,8 +66,12 @@ class DefaultController extends Controller
      */
     public function choicesAction(Request $request)
     {
-        // replace this example code with whatever you need
-        return $this->render('default/choices.html.twig');
+        $allCharacters = new Characters();
+        $characters = $allCharacters->getAll();
+    
+        return $this->render('default/choices.html.twig', [
+            'characters' => $characters,
+        ]);
     }
 
     /**
@@ -84,11 +88,13 @@ class DefaultController extends Controller
      */
     public function testAction(Request $request)
     {
-        $allCharacters = new Characters();
-        $characters = $allCharacters->getAll();
+        $charactersManager = new Characters();
+        $allCharacters = $charactersManager->getAll();
+        $empireCharacters = $charactersManager->getExtractByAffiliation($allCharacters,'Republic');
+        $republicCharacters = $charactersManager->getExtractByParameterAndValue($allCharacters, 'affiliations','Empire');
 
         return $this->render('default/test.html.twig', [
-            'characters' => $characters,
+            'characters' => $republicCharacters,
         ]);
     }
 
