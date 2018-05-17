@@ -12,6 +12,21 @@ $(document).ready(function(){
     $('#third').parallax("50%", 0.3);
 })
 
+/* range selector */
+console.clear();
+
+var app = new Vue({
+    el: '.wrapper',
+    data: {
+        value: 10
+    },
+    computed: {
+        total: function () {
+            return this.value * 10
+        }
+    }
+});
+
 /*  Feuille match */
 
 $

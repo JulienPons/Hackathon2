@@ -507,7 +507,9 @@ h2 {
 }
 
 .bg-choices{
-    background-image: url("https://images8.alphacoders.com/401/401478.jpg");
+    background: url("https://images8.alphacoders.com/401/401478.jpg") no-repeat fixed;
+    background-size: 100% 100%;
+
 }
 
 .choices-img-fluidmax{
@@ -542,6 +544,12 @@ h2 {
     left: 0;
     right: 0;
     margin: auto;
+}
+
+.wrapper{
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
 }
 /* Fin CSS Page Soulmate */
 
