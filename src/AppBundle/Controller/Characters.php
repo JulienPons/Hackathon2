@@ -70,6 +70,39 @@ class Characters
         return $newCharacters;
     }
 
+    /**
+     * return all possible characters that have a specific string value
+     *      for a specified first level paramater
+     *
+     * @param array $characters
+     * @param string $parameter
+     * @param string $value
+     *
+     * @return array
+     */
+    public function getExtractByParameterAndValue(array $characters, string $parameter, string $value) : array
+    {
+        $newCharacters = [];
+        foreach ($characters as $id => $character) {
+            if (isset($character[$parameter])) {
+                if (is_array($character[$parameter])) {
+                    for ($i = count($character[$parameter]) - 1; $i >= 0; $i--) {
+                        if (strpos($character[$parameter][$i], $value) !== false) {
+                            $newCharacters[] = $character;
+                            break;
+                        }
+                    }
+                } else {
+                    if (strpos($character[$parameter], $value) !== false) {
+                        $newCharacters[] = $character;
+                        break;
+                    }
+                }
+            }
+        }
+        return $newCharacters;
+    }
+
     /*    public function getAllByParameter($key, $value) : array
         {
             $allCharacters = new Characters();
