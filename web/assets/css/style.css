@@ -346,12 +346,12 @@ h2 {
 /* Fin CSS Page Index*/
 
 /* Début de Feuille de style Matches */
+
 /*[class*="col"]
 {
     border: 2px solid blue;
     border-radius: 6px;
     line-height: 10px;
-    color-: red;
 }
 
 [class*="row"]
@@ -362,15 +362,21 @@ h2 {
 }*/
 
 .ligne1{
-    height: 25vh;
+    height: 70vh;
 }
 
 .ligne2{
-    height: 50vh;
+    height: 30vh;
 }
 
-.ligne3{
-    height: 25vh;
+.bg01{
+    background-image: url("https://wallup.net/wp-content/uploads/2015/12/103109-Star_Wars_Episode_VI_-_The_Return_of_the_Jedi-Star_Wars.jpg");
 }
+
+.titlePage{
+    text-align: center;
+    font-size: 5rem;
+}
+
 
 /* Fin de Feuille de style Matches */

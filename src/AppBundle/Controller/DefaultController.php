@@ -33,8 +33,12 @@ class DefaultController extends Controller
      */
     public function choicesAction(Request $request)
     {
-        // replace this example code with whatever you need
-        return $this->render('default/choices.html.twig');
+        $allCharacters = new Characters();
+        $characters = $allCharacters->getAll();
+    
+        return $this->render('default/choices.html.twig', [
+            'characters' => $characters,
+        ]);
     }
 
     /**
