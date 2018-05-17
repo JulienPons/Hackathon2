@@ -68,6 +68,7 @@ class DefaultController extends Controller
      */
     public function soulmateAction(Request $request)
     {
+
         return $this->render('default/soulmate.html.twig');
     }
 
