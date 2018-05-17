@@ -132,7 +132,7 @@ nav {
     transition: transform 0.2s ease;
     top: 260px;
     bottom: 0px;
-    padding-right: 16px;
+    padding-right: 10px;
     width: 250px;
     height: 220px;
 }
@@ -671,4 +671,22 @@ input[type=radio]:checked + label>img {
     transform:
             rotateZ(-10deg)
             rotateX(10deg);
+}
+
+.gif{
+    display: block;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 800px;
+    height: 600px;
+}
+.gif2{
+    display: block;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 400px;
+    height: 300px;
+    border-radius: 15px;
 }
