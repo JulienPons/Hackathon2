@@ -51,15 +51,8 @@ class DefaultController extends Controller
      */
     public function testAction(Request $request)
     {
-        $client = new Client([
-            // Base URI is used with relative requests
-            'base_uri' => 'https://akabab.github.io/starwars-api/api/',
-            // You can set any number of default request options.
-            'timeout'  => 2.0,
-        ]);
-        $response = $client->request('GET', 'all.json');
-        $body = $response->getBody();
-        $characters = json_decode($body);
+        $allCharacters = new Characters();
+        $characters = $allCharacters->getAll();
 
         return $this->render('default/test.html.twig', [
             'characters' => $characters,
