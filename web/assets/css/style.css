@@ -362,29 +362,27 @@ h2 {
 }*/
 
 .ligne1{
-    height: 80vh;
+    height: 70vh;
 }
 
 .ligne2{
-    height: 20vh;
+    height: 30vh;
 }
 
 .bg01{
     background-image: url("https://wallup.net/wp-content/uploads/2015/12/103109-Star_Wars_Episode_VI_-_The_Return_of_the_Jedi-Star_Wars.jpg");
 }
 
-.titlePage{
-    text-align: center;
-    font-size: 5rem;
-}
-
-.img-fluidmax{
-    width: auto;
-    height: 40vh;
-}
-
 .pt-6{
-    padding-top: 5rem;
+    padding-top: 2rem;
+}
+
+.imgSeize{
+    height: 50vh;
+}
+
+.frontSeizeCard{
+    font-size: 0.9rem;
 }
 
 

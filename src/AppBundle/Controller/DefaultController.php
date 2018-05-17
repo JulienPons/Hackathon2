@@ -40,17 +40,7 @@ class DefaultController extends Controller
             'characters' => $characters,
         ]);
     }
-/*
-    /**
-     * @Route("/matches", name="matches")
-     */
-/*
-    public function matchesAction( Request $request)
-    {
 
-        // replace this example code with whatever you need
-        return $this->render('default/matches.html.twig');
-    }*/
 
     /**
      * @Route("/matches/{id}", name="matches", requirements={"\d+"})
@@ -59,11 +49,14 @@ class DefaultController extends Controller
     {
         $charactersManager = new Characters();
         $character = $charactersManager->getOneByID($id);
+        $affiliations = end($character['affiliations']);
 
 
         // replace this example code with whatever you need
         return $this->render('default/matches.html.twig',[
-            'character' => $character]);
+            'character' => $character,
+            'affiliations' => $affiliations
+        ]);
     }
 
     /**
