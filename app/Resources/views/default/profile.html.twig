@@ -1,5 +1,52 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-   Page Profile
+
+
+
+   <div class="container">
+               <div class="bg-img">
+                    <form action="/action_page.php">
+                        <div class="container FormDavid">
+                            <h1>What ar you looking for ?</h1>
+
+                            <div>
+                                <label for="name"><b>Name</b></label>
+                                <input type="text" placeholder="Enter your name" name="name" required>
+                            </div>
+
+                            <div>
+                            <label for="name"><b>Species</b></label>
+                                <select name="Style">
+                                    <option value="Droid">Droid</option>
+                                    <option value="Human">Human</option>
+                                    <option value="autre">Other</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <p class="mt-3 mb-3">Choose your specie</p>
+                                <input type="radio" id="contactChoice1"
+                                       name="contact" value="empire">
+                                <label for="contactChoice1">Empire</label>
+
+                                <input type="radio" id="contactChoice2"
+                                       name="contact" value="republique">
+                                <label for="contactChoice2">Republique</label>
+
+                            </div>
+                            <div>
+
+                            <div>
+
+                            </div>
+
+                            <button type="submit" class="btn">Login</button>
+                        </div>
+                    </form>
+                </div>
+   </div>
+
+
+
 {% endblock %}
