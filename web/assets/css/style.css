@@ -379,11 +379,11 @@ h2 {
 }*/
 
 .ligne1{
-    height: 70vh;
+    height: 80vh;
 }
 
 .ligne2{
-    height: 30vh;
+    height: 20vh;
 }
 
 .bg01{
@@ -394,6 +394,17 @@ h2 {
     text-align: center;
     font-size: 5rem;
 }
+
+
+.img-fluidmax{
+    width: auto;
+    height: 40vh;
+}
+
+.pt-6{
+    padding-top: 5rem;
+}
+
 
 /* Fin de Feuille de style Matches */
 

@@ -73,14 +73,30 @@ class DefaultController extends Controller
             'characters' => $characters,
         ]);
     }
-
+/*
     /**
      * @Route("/matches", name="matches")
      */
-    public function matchesAction(Request $request)
+/*
+    public function matchesAction( Request $request)
     {
+
         // replace this example code with whatever you need
         return $this->render('default/matches.html.twig');
+    }*/
+
+    /**
+     * @Route("/matches/{id}", name="matches", requirements={"\d+"})
+     */
+    public function matchesAction($id, Request $request)
+    {
+        $charactersManager = new Characters();
+        $character = $charactersManager->getOneByID($id);
+
+
+        // replace this example code with whatever you need
+        return $this->render('default/matches.html.twig',[
+            'character' => $character]);
     }
 
     /**
