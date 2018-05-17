@@ -20,7 +20,7 @@ class DefaultController extends Controller
     /**
      * @Route("/profile", name="profile")
      */
-    public function indexAction(Request $request)
+    public function profileAction(Request $request)
     {
         // replace this example code with whatever you need
         return $this->render('default/profile.html.twig');
@@ -29,7 +29,7 @@ class DefaultController extends Controller
     /**
      * @Route("/choices", name="choices")
      */
-    public function indexAction(Request $request)
+    public function choicesAction(Request $request)
     {
         // replace this example code with whatever you need
         return $this->render('default/choices.html.twig');
@@ -38,7 +38,7 @@ class DefaultController extends Controller
     /**
      * @Route("/matches", name="matches")
      */
-    public function indexAction(Request $request)
+    public function matchesAction(Request $request)
     {
         // replace this example code with whatever you need
         return $this->render('default/matches.html.twig');
