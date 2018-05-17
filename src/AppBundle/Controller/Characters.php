@@ -241,7 +241,7 @@ class Characters
     {
         $newCharacters = [];
         foreach ($characters as $character) {
-            if (!empty($character['height']) && ( ($height / $character['height']) > 1.125 || ($height / $character['height']) < 0.8 )) {
+            if (!empty($character['height']) && ( ($height / $character['height']) > 1.11 || ($height / $character['height']) < 0.9 )) {
                 $newCharacters[] = $character;
             }
         }
