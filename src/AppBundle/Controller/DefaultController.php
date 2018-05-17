@@ -29,6 +29,39 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/xenophiliac", name="xenophiliac")
+     */
+    public function xenophiliacAction(Request $request)
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/xenophiliac.html.twig');
+    }
+    /**
+     * @Route("/objectum_sexual ", name="objectum_sexual")
+     */
+    public function objectumSexualAction(Request $request)
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/objectum_sexual.html.twig');
+    }
+    /**
+     * @Route("/forbidden", name="forbidden")
+     */
+    public function forbiddenAction(Request $request)
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/forbidden.html.twig');
+    }
+    /**
+     * @Route("/soulmate", name="soulmate")
+     */
+    public function soulmateAction(Request $request)
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/soulmate.html.twig');
+    }
+
+    /**
      * @Route("/choices", name="choices")
      */
     public function choicesAction(Request $request)
@@ -63,6 +96,15 @@ class DefaultController extends Controller
         return $this->render('default/test.html.twig', [
             'characters' => $republicCharacters,
         ]);
+    }
+
+    /**
+     * @Route("/credit", name="credit")
+     */
+    public function creditAction(Request $request)
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/credit.html.twig');
     }
 
 }
