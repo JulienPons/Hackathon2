@@ -482,7 +482,11 @@ h2 {
 
 /* Début de Feuille de style Choices */
 .choices-card {
-    background-color: rgba(100, 100, 100, 0.8);
+    background-color: rgb(150, 150, 150);
+    border-radius: 0.25rem;
+}
+.bg-grey-choices {
+    background-color: rgb(150, 150, 150);
 }
 
 .choices-modal{
@@ -492,6 +496,20 @@ h2 {
 .bg-choices{
     background-image: url("https://images8.alphacoders.com/401/401478.jpg");
 }
+
+.choices-img-fluidmax{
+    width: auto;
+    max-height: 100%;
+}
+
+.no-border-choices {
+    border: none;
+}
+
+.border-bottom-choices {
+    border-bottom: 1px solid rgba(0,0,0,1);
+}
+
 /* Fin de Feuille de style Choices */
 
 /* CSS Page Soulmate */
