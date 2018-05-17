@@ -6,10 +6,16 @@
     box-sizing: border-box;
 }
 
+a:hover{
+    color: black;
+    text-decoration: none;
+}
+
 #container {
     width: 120px;
     height: 120px;
     position: relative;
+    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -31,6 +37,7 @@
     width: 70%;
     transform-origin: 50% 50%;
     transition: top 0.4s ease 0.4s, transform 0.4s ease 0.4s;
+
 }
 #burger .filling:before, #burger .bun:before, #burger .filling:after, #burger .bun:after {
     content: "";
@@ -41,6 +48,16 @@
     top: 50%;
     transform: translate(0%, -45%);
     transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+#burger .bun:before{
+    box-shadow: #F00 0px 0px 10px 1px;
+}
+#burger .filling:before{
+    box-shadow: #0F0 0px 0px 10px 1px;
+}
+#burger .bun.bottom:before{
+    box-shadow: #0FF 0px 0px 10px 1px;
 }
 #burger .filling:before, #burger .bun:before {
     left: 0;
@@ -96,7 +113,7 @@ nav {
     position: fixed;
     transform: translatex(-100%);
     transition: transform 0.2s ease;
-    top: 250px;
+    top: 260px;
     bottom: 0px;
     padding-right: 16px;
     width: 250px;
@@ -374,3 +391,65 @@ h2 {
 }
 
 /* Fin de Feuille de style Matches */
+
+/* CSS Page Credit */
+
+.credit-background {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    overflow: hidden;
+}
+
+.fade {
+    position: relative;
+    width: 100%;
+    min-height: 60vh;
+    top: -25px;
+    background-image: linear-gradient(0deg, transparent, black 75%);
+    z-index: 1;
+}
+
+.star-wars {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 800px;
+    color: #feda4a;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 500%;
+    font-weight: 600;
+    letter-spacing: 6px;
+    line-height: 150%;
+    perspective: 400px;
+    text-align: justify;
+}
+
+.crawl {
+    position: relative;
+    top: 99999px;
+    transform-origin: 50% 100%;
+    animation: crawl 20s linear;
+}
+
+.crawl > .title {
+    font-size: 90%;
+    text-align: center;
+}
+
+.crawl > .title h1 {
+    margin: 0 0 100px;
+    text-transform: uppercase;
+}
+
+@keyframes crawl {
+    0% {
+        top: -100px;
+        transform: rotateX(20deg)  translateZ(0);
+    }
+    100% {
+        top: -6000px;
+        transform: rotateX(25deg) translateZ(-2500px);
+    }
+}
+/* Fin CSS Page Credit */
