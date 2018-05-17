@@ -34,14 +34,40 @@ class DefaultController extends Controller
      */
     public function xenophiliacAction(Request $request)
     {
+        $charactersManager = new Characters();
+        $allCharacters = $charactersManager->getAll();
+
+        if (!empty($_POST['species'])) {
+            $characters = $charactersManager->getExtractByParameterAndValue($allCharacters,'species',$_POST['species']);
+            if (!empty($_POST['gender'])) {
+                $characters = $charactersManager->getExtractByParameterAndValue($characters,'gender',$_POST['gender']);
+            }
+            if (!empty($_POST['lastHomeworld'])) {
+                $characters = $charactersManager->getExtractByParameterAndValue($characters,'lastHomeworld',$_POST['lastHomeworld']);
+            }
+            return $this->render('default/choices.html.twig', [
+                'characters' => $characters,
+            ]);
+        }
+
+        $species = $charactersManager->getValuesByParameter($allCharacters,'species');
+        $homeworlds = $charactersManager->getValuesByParameter($allCharacters,'lastHomeworld');
+
+        return $this->render('default/xenophiliac.html.twig', [
+            'species' => $species,
+            'homeworlds' => $homeworlds,
+        ]);
+
+
         // replace this example code with whatever you need
-        return $this->render('default/xenophiliac.html.twig');
+        return $this->render('default/choiceshtml.twig');
     }
     /**
      * @Route("/objectum_sexual ", name="objectum_sexual")
      */
     public function objectumSexualAction(Request $request)
     {
+
         // replace this example code with whatever you need
         return $this->render('default/objectum_sexual.html.twig');
     }
