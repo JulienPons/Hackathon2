@@ -215,6 +215,7 @@ class Characters
         }
         sort($values);
         return $values;
+
     }
 
     /**

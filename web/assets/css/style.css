@@ -389,11 +389,7 @@ h2 {
 }*/
 
 .ligne1{
-    height: 70vh;
-}
-
-.ligne2{
-    height: 30vh;
+    height: 100vh;
 }
 
 .bg01{
@@ -417,6 +413,18 @@ h2 {
 
 .frontSeizeCard{
     font-size: 0.9rem;
+    font: bold;
+}
+
+.siezeCardMatch{
+    height: 100%;
+}
+
+.chat{
+    height: 83vh;
+    border: 1px solid white;
+    background-color: rgba(255,255,255,0.5);
+    margin-top: 10px ;
 }
 
 

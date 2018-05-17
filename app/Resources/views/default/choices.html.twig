@@ -39,6 +39,7 @@
                                     <li>
                                         <h6>Eye color: {{ character.eyeColor }}</h6>
                                     </li>
+
                                     {% if character.height is defined %}
                                     <li>
                                         <h6>Height: {{ character.height }} m</h6>
@@ -69,6 +70,7 @@
                                         <h6>Affiliations: </h6>
                                     </li>
                                     {% endif %}
+
                                     <ol class="p-0">
                                         <a class="btn btn-primary" href="/matches/{{ character.id }}"><i class="fas fa-pencil-alt mr-2"></i>Choose</a>
                                     </ol>
