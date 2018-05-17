@@ -117,7 +117,7 @@ class DefaultController extends Controller
     {
         $charactersManager = new Characters();
         $allCharacters = $charactersManager->getAll();
-        $characters = $charactersManager->getValuesByParameter($allCharacters,'species');
+        $characters = $charactersManager->getAllDifferentByHeight($allCharacters,'1.8');
 
         return $this->render('default/test.html.twig', [
             'characters' => $characters,
