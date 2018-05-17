@@ -55,11 +55,13 @@ class DefaultController extends Controller
      */
     public function testAction(Request $request)
     {
-        $allCharacters = new Characters();
-        $characters = $allCharacters->getAll();
+        $charactersManager = new Characters();
+        $allCharacters = $charactersManager->getAll();
+        $empireCharacters = $charactersManager->getExtractByAffiliation($allCharacters,'Republic');
+        $republicCharacters = $charactersManager->getExtractByParameterAndValue($allCharacters, 'affiliations','Empire');
 
         return $this->render('default/test.html.twig', [
-            'characters' => $characters,
+            'characters' => $republicCharacters,
         ]);
     }
 
