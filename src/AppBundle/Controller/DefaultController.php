@@ -51,17 +51,27 @@ class DefaultController extends Controller
      */
     public function forbiddenAction(Request $request)
     {
-        if (!empty($_POST['affiliations'])) {
-            $charactersManager = new Characters();
-            $allCharacters = $charactersManager->getAll();
-            $characters = $charactersManager->getExtractByAffiliation($allCharacters,$_POST['affiliations']);
+        $charactersManager = new Characters();
+        $allCharacters = $charactersManager->getAll();
 
+        if (!empty($_POST['affiliations'])) {
+            $characters = $charactersManager->getExtractByAffiliation($allCharacters,$_POST['affiliations']);
+            if (!empty($_POST['height'])) {
+                $characters = $charactersManager->getAllDifferentByHeight($characters,$_POST['height']);
+            }
+            if (!empty($_POST['mass'])) {
+                $characters = $charactersManager->getAllDifferentByMass($characters, $_POST['mass']);
+            }
             return $this->render('default/choices.html.twig', [
                 'characters' => $characters,
             ]);
         }
 
-        return $this->render('default/forbidden.html.twig');
+        $species = $charactersManager->getValuesByParameter($allCharacters,'species');
+
+        return $this->render('default/forbidden.html.twig', [
+            'species' => $species,
+        ]);
     }
     /**
      * @Route("/soulmate", name="soulmate")

@@ -557,7 +557,7 @@ body, html {
 .bg-img {
     /* The image used */
     /*background-image: url("https://www.w3schools.com/howto/img_nature.jpg");*/
-    background-image: url("https://i.pinimg.com/originals/ef/75/74/ef7574f2a0ebea8295aa5c27e5339867.jpg");
+    background-image: url("https://www.50-best.com/images/hd_wallpapers/cool_spaceships_hd.jpg");
 
 
     /* Control the height of the image */
@@ -571,14 +571,14 @@ body, html {
 
 /* Add styles to the form container */
 .FormDavid {
-    position: absolute;
+    /*position: absolute;
     left: 35%;
-    top:50%;
+    top:50%;*/
     margin: 20px;
     max-width: 600px;
     padding: 16px;
     background-color: white;
-    opacity: 0.9;
+    opacity: 1;
     box-shadow: 10px 5px 5px dodgerblue;
 }
 
@@ -605,7 +605,7 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 /* Set a style for the submit button */
-.btn {
+.ProfileButton {
     background-color: #65FF19;
     color: white;
     padding: 16px 20px;
@@ -615,7 +615,7 @@ input[type=text]:focus, input[type=password]:focus {
     opacity: 0.9;
 }
 
-.btn:hover {
+.ProfileButton:hover {
     opacity: 1;
 }
 
@@ -623,7 +623,7 @@ input[type=text]:focus, input[type=password]:focus {
 input[type=text] {
     width: 130px;
     -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
+    transition: width 0.7s ease-in-out;
 }
 
 /* When the input field gets focus, change its width to 100% */
