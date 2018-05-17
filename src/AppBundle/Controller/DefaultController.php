@@ -82,6 +82,7 @@ class DefaultController extends Controller
     
         return $this->render('default/choices.html.twig', [
             'characters' => $characters,
+            
         ]);
     }
 

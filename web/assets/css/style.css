@@ -496,6 +496,7 @@ h2 {
 .choices-card {
     background-color: rgb(150, 150, 150);
     border-radius: 0.25rem;
+    width: 425px;
 }
 .bg-grey-choices {
     background-color: rgb(150, 150, 150);
@@ -510,8 +511,7 @@ h2 {
 }
 
 .choices-img-fluidmax{
-    width: auto;
-    max-height: 100%;
+   
 }
 
 .no-border-choices {
