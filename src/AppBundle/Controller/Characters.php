@@ -43,9 +43,9 @@ class Characters
         foreach ($characters as $key => $character) {
             if (!empty($characters[$key]['homeworld'])) {
                 if (is_array($characters[$key]['homeworld'])) {
-                    $characters[$key]['lastHomeworld'] = $characters[$key]['homeworld'][count($characters[$key]['homeworld'])-1];
+                    $characters[$key]['lastHomeworld'] = ucwords(strtolower($characters[$key]['homeworld'][count($characters[$key]['homeworld'])-1]));
                 } else {
-                    $characters[$key]['lastHomeworld'] = $characters[$key]['homeworld'];
+                    $characters[$key]['lastHomeworld'] = ucwords(strtolower($characters[$key]['homeworld']));
                 }
             }
         }

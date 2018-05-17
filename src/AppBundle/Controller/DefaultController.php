@@ -39,11 +39,31 @@ class DefaultController extends Controller
     }
     /**
      * @Route("/objectum_sexual ", name="objectum_sexual")
+     * @Method({"GET","POST"})
      */
     public function objectumSexualAction(Request $request)
     {
-        // replace this example code with whatever you need
-        return $this->render('default/objectum_sexual.html.twig');
+        $charactersManager = new Characters();
+        $allCharacters = $charactersManager->getAll();
+
+        if (!empty($_POST['affiliations'])) {
+            $characters = $charactersManager->getExtractByAffiliation($allCharacters,$_POST['affiliations']);
+            if (!empty($_POST['height'])) {
+                $characters = $charactersManager->getAllDifferentByHeight($characters,$_POST['height']);
+            }
+            if (!empty($_POST['mass'])) {
+                $characters = $charactersManager->getAllDifferentByMass($characters, $_POST['mass']);
+            }
+            return $this->render('default/choices.html.twig', [
+                'characters' => $characters,
+            ]);
+        }
+
+        $species = $charactersManager->getValuesByParameter($allCharacters,'species');
+
+        return $this->render('default/objectum_sexual.html.twig', [
+            'species' => $species,
+        ]););
     }
     /**
      * @Route("/forbidden", name="forbidden")
