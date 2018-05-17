@@ -2,7 +2,8 @@
 
 {% block body %}
     {% for character in characters %}
-        <p>{{ character }}
-        </p>
+        {% if character.height is defined %}
+            <div>{{ character.height }}</div>
+        {% endif %}
     {% endfor %}
 {% endblock %}

@@ -28,6 +28,7 @@ class Characters
         $body = $response->getBody();
         $assoc = true;
         $this->characters = json_decode($body,$assoc);
+        shuffle($this->characters);
 
         return $this->characters;
     }
@@ -205,5 +206,24 @@ class Characters
         }
         sort($values);
         return $values;
+    }
+
+    /**
+     * select characters with a very different size
+     *
+     * @param array $characters
+     * @param float $height
+     *
+     * @return array
+     */
+    public function getAllDifferentByHeight(array $characters, float $height) : array
+    {
+        $newCharacters = [];
+        foreach ($characters as $character) {
+            if (!empty($character['height']) && ( ($height / $character['height']) > 1.125 || ($height / $character['height']) < 0.8 )) {
+                $newCharacters[] = $character;
+            }
+        }
+        return $newCharacters;
     }
 }

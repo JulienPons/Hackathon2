@@ -39,46 +39,33 @@
                                     <li>
                                         <h6>Eye color: {{ character.eyeColor }}</h6>
                                     </li>
+                                        {% if character.height is defined %}
+                                            <h6>Height: {{ character.height }} m</h6>
+                                        {% endif %}
+        
+                                        {% if character.mass is defined %}
+                                            <h6> Mass: {{ character.mass }} Kg</h6>
+                                        {% endif %}
+        
+                                        {% if character.hairColor is defined %}
+                                             <h6>Hair color: {{ character.hairColor }}</h6>
+                                        {% endif %}
+        
+                                        {% if character.homeworld is defined %}
+                                             <h6>Homeworld: {{ character.homeworld }}</h6>
+                                        {% endif %}
+        
+                                        {% if character.bornLocation is defined %}
+                                             <h6>Born location: {{ character.bornLocation }}</h6>
+                                        {% endif %}
+        
+                                        {% if character.affiliations is defined %}
+                                            <h6>Affiliations: {{ affiliations }}</h6>
+                                        {% endif %}
                                     <ol class="p-0">
-                                        <a class="btn btn-primary" href=""><i class="fas fa-pencil-alt mr-2"></i>Choose</a>
+                                        <a class="btn btn-primary" href="/matches/{{ character.id }}"><i class="fas fa-pencil-alt mr-2"></i>Choose</a>
                                     </ol>
                                 </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal fade" id="modal{{ character.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content choices-modal">
-                                <div class="modal-header">
-                                    <h2 class="modal-title" id="exampleModalLongTitle">{{ character.name }}</h2>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="row">
-                                        <div class="col-md-6 align-items-center">
-                                            <img class="rounded" src="{{ character.image }}">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-12">
-                                         <h4 class="text-center h4-modalTitle">Description</h4>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                    <div class="col-6">
-                                            <h6 class="p-pedigree">Sexe</h6>
-                                            <h6 class="p-pedigree">Espèce</h6>
-                                            <h6 class="p-pedigree">Couleur des yeux</h6>
-                                        </div>
-                                        <div class="col-6">
-                                            <h6>{{ character.gender }}</h6>
-                                            <h6>{{ character.species }}</h6>
-                                            <h6>{{ character.eyeColor }}</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                 </div>
                             </div>
                         </div>
                     </div>
