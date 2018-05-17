@@ -5,15 +5,17 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Controller\Characters;
+use GuzzleHttp\Client;
 
 class DefaultController extends Controller
 {
+
     /**
      * @Route("/", name="homepage")
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
         return $this->render('default/index.html.twig');
     }
 
@@ -31,8 +33,12 @@ class DefaultController extends Controller
      */
     public function choicesAction(Request $request)
     {
-        // replace this example code with whatever you need
-        return $this->render('default/choices.html.twig');
+        $allCharacters = new Characters();
+        $characters = $allCharacters->getAll();
+    
+        return $this->render('default/choices.html.twig', [
+            'characters' => $characters,
+        ]);
     }
 
     /**
@@ -42,6 +48,19 @@ class DefaultController extends Controller
     {
         // replace this example code with whatever you need
         return $this->render('default/matches.html.twig');
+    }
+
+    /**
+     * @Route("/test", name="test")
+     */
+    public function testAction(Request $request)
+    {
+        $allCharacters = new Characters();
+        $characters = $allCharacters->getAll();
+
+        return $this->render('default/test.html.twig', [
+            'characters' => $characters,
+        ]);
     }
 
 }
