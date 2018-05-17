@@ -2,8 +2,7 @@
 
 {% block body %}
     {% for character in characters %}
-        {% if character.name %}
-            <p>{{ character.id }} - {{ character.name }}</p>
-        {% endif %}
+        <p>{{ character }}
+        </p>
     {% endfor %}
 {% endblock %}
