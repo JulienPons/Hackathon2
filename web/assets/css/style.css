@@ -561,10 +561,10 @@ body, html {
 
 
     /* Control the height of the image */
-    min-height: 1000px;
+    height: 100vh;
+    width: 100vw;
 
     /* Center and scale the image nicely */
-    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -632,3 +632,28 @@ input[type=text]:focus {
 }
 /* Fin de Feuille de style Profile */
 
+
+/* forbidden */
+.input-hidden {
+    position: absolute;
+    left: -9999px;
+}
+
+input[type=radio]:checked + label>img {
+    border: 1px solid #fff;
+    box-shadow: 0 0 3px 3px #090;
+}
+
+/* Stuff after this is only to make things more pretty */
+input[type=radio] + label>img {
+    border: 1px none #444;
+    width: 150px;
+    height: 150px;
+    transition: 500ms all;
+}
+
+input[type=radio]:checked + label>img {
+    transform:
+            rotateZ(-10deg)
+            rotateX(10deg);
+}
