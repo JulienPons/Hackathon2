@@ -9,70 +9,76 @@
 {% endblock %}
 
 {% block body %}
-    <div class="container-fluid no-gutters bg01">
-        <div class="row ligne1 no-gutters">
-            <div class="col-md-6 text-right pt-6">
-                {% if character.image is defined %}
-                    <img src="{{ character.image }}" class="img-fluidmax img-fluidmax ">
-                {% endif %}
-            </div>
-            <div class="col-md-6">
-                <h1 class="titlePage text-white">Match !</h1>
-                <p class="text-white">
-                    {% if character.name is defined %}
-                        Name: {{ character.name }} <br>
-                    {% endif %}
+    <div class="bg01">
+        <div class="container ">
+            <div class="row ligne1 no-gutters">
+                <div class="col-md-5 text-center p-0 m-3 mt-5">
+                    <div class="card bg-grey-choices siezeCardMatch">
+                        <div class="card-header">
+                            <h5>{{ character.name }}</h5>
+                        </div>
+                        <div class="card-body ">
+                            <div class="card-header">
+                                <img class="imgSeize" src="{{ character.image }}" alt="Card image cap">
+                            </div>
+                            <li class="list-group-item p-1 frontSeizeCard text-left bg-grey-choices text-center">
+                                {% if character.height is defined %}
+                                    Height: {{ character.height }} m <br>
+                                {% endif %}
 
-                    {% if character.height is defined %}
-                        Height: {{ character.height }} m <br>
-                    {% endif %}
+                                {% if character.mass is defined %}
+                                    Mass: {{ character.mass }} Kg <br>
+                                {% endif %}
 
-                    {% if character.mass is defined %}
-                        Mass: {{ character.mass }} Kg <br>
-                    {% endif %}
+                                {% if character.gender is defined %}
+                                    Gender: {{ character.gender }}  <br>
+                                {% endif %}
 
-                    {% if character.gender is defined %}
-                        Gender: {{ character.gender }}  <br>
-                    {% endif %}
+                                {% if character.hairColor is defined %}
+                                    Hair color: {{ character.hairColor }}  <br>
+                                {% endif %}
 
-                    {% if character.hairColor is defined %}
-                        Hair color: {{ character.hairColor }}  <br>
-                    {% endif %}
+                                {% if character.eyeColor is defined %}
+                                    Eye color: {{ character.eyeColor }}  <br>
+                                {% endif %}
 
-                    {% if character.eyeColor is defined %}
-                        Eye color: {{ character.eyeColor }}  <br>
-                    {% endif %}
+                                {% if character.homeworld is defined %}
+                                    Homeworld: {{ character.homeworld }} <br>
+                                {% endif %}
 
-                    {% if character.homeworld is defined %}
-                        Homeworld: {{ character.homeworld }} <br>
-                    {% endif %}
+                                {% if character.bornLocation is defined %}
+                                    Born location: {{ character.bornLocation }} <br>
+                                {% endif %}
 
-                    {% if character.bornLocation is defined %}
-                        Born location: {{ character.bornLocation }} <br>
-                    {% endif %}
+                                {% if character.species is defined %}
+                                    species: {{ character.species }} <br>
+                                {% endif %}
 
-                    {% if character.species is defined %}
-                        species: {{ character.species }} <br>
-                    {% endif %}
-
-                    {% if character.affiliations is defined %}
-                        Affiliations:  <br>
-                    {% endif %}
-                </p>
-                <p class="text-white">{{ dump(character) }}</p>
-            </div>
-        </div>
-
-        <div class="row ligne2 no-gutters align-items-center">
-            <div class="col-md-6 offset-md-3">
-                <div class="input-group my-auto">
-                    <div class="form-control">Salut ça va?</div>
-                    <div class="input-group-prepend">
-                        <button class="btn btn-outline-secondary text-white" type="button">OUI !!!</button>
-                        <button class="btn btn-outline-secondary text-white" type="button">NON !</button>
+                                {% if character.affiliations is defined %}
+                                    Affiliations: {{ affiliations }} <br>
+                                {% endif %}
+                            </li>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 text-center p-0 m-3 mt-5">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="input-group">
+                                <p class="form-control">Salut ça va ?</p>
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button">OUI !!!</button>
+                                    <button class="btn btn-outline-secondary" type="button">NON !!!</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <p class="chat"></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 {% endblock %}
+

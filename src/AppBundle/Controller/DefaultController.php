@@ -51,17 +51,27 @@ class DefaultController extends Controller
      */
     public function forbiddenAction(Request $request)
     {
-        if (!empty($_POST['affiliations'])) {
-            $charactersManager = new Characters();
-            $allCharacters = $charactersManager->getAll();
-            $characters = $charactersManager->getExtractByAffiliation($allCharacters,$_POST['affiliations']);
+        $charactersManager = new Characters();
+        $allCharacters = $charactersManager->getAll();
 
+        if (!empty($_POST['affiliations'])) {
+            $characters = $charactersManager->getExtractByAffiliation($allCharacters,$_POST['affiliations']);
+            if (!empty($_POST['height'])) {
+                $characters = $charactersManager->getAllDifferentByHeight($characters,$_POST['height']);
+            }
+            if (!empty($_POST['mass'])) {
+                $characters = $charactersManager->getAllDifferentByMass($characters, $_POST['mass']);
+            }
             return $this->render('default/choices.html.twig', [
                 'characters' => $characters,
             ]);
         }
 
-        return $this->render('default/forbidden.html.twig');
+        $species = $charactersManager->getValuesByParameter($allCharacters,'species');
+
+        return $this->render('default/forbidden.html.twig', [
+            'species' => $species,
+        ]);
     }
     /**
      * @Route("/soulmate", name="soulmate")
@@ -82,19 +92,10 @@ class DefaultController extends Controller
     
         return $this->render('default/choices.html.twig', [
             'characters' => $characters,
+            
         ]);
     }
-/*
-    /**
-     * @Route("/matches", name="matches")
-     */
-/*
-    public function matchesAction( Request $request)
-    {
 
-        // replace this example code with whatever you need
-        return $this->render('default/matches.html.twig');
-    }*/
 
     /**
      * @Route("/matches/{id}", name="matches", requirements={"\d+"})
@@ -103,11 +104,14 @@ class DefaultController extends Controller
     {
         $charactersManager = new Characters();
         $character = $charactersManager->getOneByID($id);
+        $affiliations = end($character['affiliations']);
 
 
         // replace this example code with whatever you need
         return $this->render('default/matches.html.twig',[
-            'character' => $character]);
+            'character' => $character,
+            'affiliations' => $affiliations
+        ]);
     }
 
     /**
@@ -117,7 +121,7 @@ class DefaultController extends Controller
     {
         $charactersManager = new Characters();
         $allCharacters = $charactersManager->getAll();
-        $characters = $charactersManager->getExtractByParametersAndValues($allCharacters, 'species',['human','droid']);
+        $characters = $charactersManager->getAllDifferentByMass($allCharacters,'2');
 
         return $this->render('default/test.html.twig', [
             'characters' => $characters,

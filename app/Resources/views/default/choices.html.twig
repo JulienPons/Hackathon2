@@ -19,17 +19,14 @@
         <div class="row justify-content-md-center">
             {% for character in characters %}
                 {% if character.name %}
-                    <div class="col-md-6 col-sm-6 text-center">
-                        <div class="card shadow my-3 choices-card">
-                            <div class="card-header">
+                <div class="col-md-5 col-sm-6 text-center choices-card p-0 m-3">
+                        <div class="card bg-grey-choices no-border-choices">
+                            <div class="card-header border-bottom-choices">
                                 <h5>{{ character.name }}</h5>
                             </div>
                             <div class="card-body d-inline-flex">
-                                <img class="card-img-top" src="{{ character.image }}" alt="Card image cap">
-                                <ul>
-                                    <li>
-                                        <h4>Description</h4>
-                                    </li>
+                                <img class="card-img-top choices-img-fluidmax" src="{{ character.image }}" alt="Card image cap">
+                                <ul class="text-left">
                                     <li>
                                         <h6>Gender: {{ character.gender }}</h6>
                                     </li>
@@ -39,57 +36,42 @@
                                     <li>
                                         <h6>Eye color: {{ character.eyeColor }}</h6>
                                     </li>
+
+                                    {% if character.height is defined %}
                                     <li>
-                                        <a class="btn btn-primary" href=""><i class="fas fa-pencil-alt mr-2"></i>Valider les droits</a>
+                                        <h6>Height: {{ character.height }} m</h6>
                                     </li>
+                                    {% endif %}
+                                    {% if character.mass is defined %}
+                                    <li>
+                                        <h6> Mass: {{ character.mass }} Kg</h6>
+                                    </li>
+                                    {% endif %}
+                                    {% if character.hairColor is defined %}
+                                    <li>
+                                        <h6>Hair color: {{ character.hairColor }}</h6>
+                                    </li>
+                                    {% endif %}
+                                    {% if character.lastHomeworld is defined %}
+                                    <li>
+                                        <h6>Homeworld: {{ character.lastHomeworld }}</h6>
+                                    </li>
+                                    {% endif %}
+                                    {% if character.bornLocation is defined %}
+                                    <li>
+                                        <h6>Born location: {{ character.bornLocation }}</h6>
+                                    </li>
+                                    {% endif %}
+                                    {% if character.lastAffiliation is defined %}
+                                    <li>
+                                        <h6>Affiliations: {{ character.lastAffiliation }}</h6>
+                                    </li>
+                                    {% endif %}
+
+                                    <ol class="p-0">
+                                        <a class="btn btn-primary" href="/matches/{{ character.id }}"><i class="fas fa-pencil-alt mr-2"></i>Choose</a>
+                                    </ol>
                                 </ul>
-                                
-                                <button type="button" class="btn btn-primary btn-card" data-toggle="modal"
-                                        data-target="#modal{{ character.id }}" name="modal">
-                                    Description
-                                </button>
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" name="{{ character.id }}" id="{{ character.id }}">
-                                    <label class="custom-control-label" for="{{ character.id }}"><h5
-                                                class="h5-card">{{ character.name }}</h5>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal fade" id="modal{{ character.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content choices-modal">
-                                <div class="modal-header">
-                                    <h2 class="modal-title" id="exampleModalLongTitle">{{ character.name }}</h2>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="row">
-                                        <div class="col-md-6 align-items-center">
-                                            <img class="rounded" src="{{ character.image }}">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-12">
-                                         <h4 class="text-center h4-modalTitle">Description</h4>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                    <div class="col-6">
-                                            <h6 class="p-pedigree">Sexe</h6>
-                                            <h6 class="p-pedigree">Espèce</h6>
-                                            <h6 class="p-pedigree">Couleur des yeux</h6>
-                                        </div>
-                                        <div class="col-6">
-                                            <h6>{{ character.gender }}</h6>
-                                            <h6>{{ character.species }}</h6>
-                                            <h6>{{ character.eyeColor }}</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                 </div>
                             </div>
                         </div>
                     </div>

@@ -389,30 +389,42 @@ h2 {
 }*/
 
 .ligne1{
-    height: 80vh;
-}
-
-.ligne2{
-    height: 20vh;
+    height: 100vh;
 }
 
 .bg01{
     background-image: url("https://wallup.net/wp-content/uploads/2015/12/103109-Star_Wars_Episode_VI_-_The_Return_of_the_Jedi-Star_Wars.jpg");
-}
-
-.titlePage{
-    text-align: center;
-    font-size: 5rem;
-}
-
-
-.img-fluidmax{
-    width: auto;
-    height: 40vh;
+    height: 100vh;
 }
 
 .pt-6{
-    padding-top: 5rem;
+    padding-top: 2rem;
+}
+
+
+.imgSeize{
+    height: 50vh;
+    width: auto;
+}
+
+.borderCard{
+    border: 1px solid black;
+}
+
+.frontSeizeCard{
+    font-size: 0.9rem;
+    font: bold;
+}
+
+.siezeCardMatch{
+    height: 100%;
+}
+
+.chat{
+    height: 83vh;
+    border: 1px solid white;
+    background-color: rgba(255,255,255,0.5);
+    margin-top: 10px ;
 }
 
 
@@ -482,7 +494,12 @@ h2 {
 
 /* Début de Feuille de style Choices */
 .choices-card {
-    background-color: rgba(100, 100, 100, 0.8);
+    background-color: rgb(150, 150, 150);
+    border-radius: 0.25rem;
+    width: 425px;
+}
+.bg-grey-choices {
+    background-color: rgb(150, 150, 150);
 }
 
 .choices-modal{
@@ -492,6 +509,19 @@ h2 {
 .bg-choices{
     background-image: url("https://images8.alphacoders.com/401/401478.jpg");
 }
+
+.choices-img-fluidmax{
+   
+}
+
+.no-border-choices {
+    border: none;
+}
+
+.border-bottom-choices {
+    border-bottom: 1px solid rgba(0,0,0,1);
+}
+
 /* Fin de Feuille de style Choices */
 
 /* CSS Page Soulmate */
@@ -533,7 +563,7 @@ body, html {
 .bg-img {
     /* The image used */
     /*background-image: url("https://www.w3schools.com/howto/img_nature.jpg");*/
-    background-image: url("https://i.pinimg.com/originals/ef/75/74/ef7574f2a0ebea8295aa5c27e5339867.jpg");
+    background-image: url("https://www.50-best.com/images/hd_wallpapers/cool_spaceships_hd.jpg");
 
 
     /* Control the height of the image */
@@ -547,14 +577,14 @@ body, html {
 
 /* Add styles to the form container */
 .FormDavid {
-    position: absolute;
+    /*position: absolute;
     left: 35%;
-    top:50%;
+    top:50%;*/
     margin: 20px;
     max-width: 600px;
     padding: 16px;
     background-color: white;
-    opacity: 0.9;
+    opacity: 1;
     box-shadow: 10px 5px 5px dodgerblue;
 }
 
@@ -581,7 +611,7 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 /* Set a style for the submit button */
-.btn {
+.ProfileButton {
     background-color: #65FF19;
     color: white;
     padding: 16px 20px;
@@ -591,7 +621,7 @@ input[type=text]:focus, input[type=password]:focus {
     opacity: 0.9;
 }
 
-.btn:hover {
+.ProfileButton:hover {
     opacity: 1;
 }
 
@@ -599,7 +629,7 @@ input[type=text]:focus, input[type=password]:focus {
 input[type=text] {
     width: 130px;
     -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
+    transition: width 0.7s ease-in-out;
 }
 
 /* When the input field gets focus, change its width to 100% */
