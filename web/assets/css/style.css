@@ -411,6 +411,10 @@ h2 {
     width: auto;
 }
 
+.borderCard{
+    border: 1px solid black;
+}
+
 .frontSeizeCard{
     font-size: 0.9rem;
 }
