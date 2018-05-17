@@ -5,6 +5,13 @@
     color: black;
     text-shadow: #FFFF00 1px 1px, #FFFF00 -1px 1px, #FFFF00 -1px -1px, #FFFF00 1px -1px;
 }
+.logo-end{
+    position: absolute;
+    margin-right: 10px;
+    right:0;
+    color: black;
+    text-shadow: #FFFF00 1px 1px, #FFFF00 -1px 1px, #FFFF00 -1px -1px, #FFFF00 1px -1px;
+}
 
 /* Fin CSS Header */
 
@@ -393,7 +400,7 @@ h2 {
 }
 
 .bg01{
-    background-image: url("https://wallup.net/wp-content/uploads/2015/12/103109-Star_Wars_Episode_VI_-_The_Return_of_the_Jedi-Star_Wars.jpg");
+    background: url("https://images.alphacoders.com/107/thumb-1920-107763.jpg");
     height: 100vh;
 }
 
@@ -565,7 +572,7 @@ body, html {
 .bg-img {
     /* The image used */
     /*background-image: url("https://www.w3schools.com/howto/img_nature.jpg");*/
-    background-image: url("https://www.50-best.com/images/hd_wallpapers/cool_spaceships_hd.jpg");
+    background-image: url("https://images5.alphacoders.com/672/thumb-1920-672012.jpg");
 
 
     /* Control the height of the image */
@@ -584,18 +591,15 @@ body, html {
     top:50%;*/
     margin: 20px;
     max-width: 600px;
-    padding: 16px;
+    padding: 50px;
     background-color: white;
     opacity: 1;
-    box-shadow: 10px 5px 5px dodgerblue;
+    box-shadow: 1px 1px 30px rgba(255, 255, 255, 255);
+    border-radius: 10% / 50%;
 }
 
 .empireDavid{
     font-weight: bold;
-}
-
-.ProfileButton{
-    font-size:2em;
 }
 
 /* Full-width input fields */
@@ -614,7 +618,7 @@ input[type=text]:focus, input[type=password]:focus {
 
 /* Set a style for the submit button */
 .ProfileButton {
-    background-color: #65FF19;
+    font-size: 2em;
     color: white;
     padding: 16px 20px;
     border: none;
@@ -640,6 +644,9 @@ input[type=text]:focus {
 }
 /* Fin de Feuille de style Profile */
 
+.ButtonBackground{
+    background-color: #008000;
+}
 
 /* forbidden */
 .input-hidden {
