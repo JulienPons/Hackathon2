@@ -38,7 +38,7 @@ class DefaultController extends Controller
         $allCharacters = $charactersManager->getAll();
 
         if (!empty($_POST['species'])) {
-            $characters = $charactersManager->getExtractByParameterAndValue($allCharacters,'species',$_POST['species']);
+            $characters = $charactersManager->getExtractByParameterAndInverseOfValue($allCharacters,'species',$_POST['species']);
             if (!empty($_POST['gender'])) {
                 $characters = $charactersManager->getExtractByParameterAndValue($characters,'gender',$_POST['gender']);
             }
@@ -57,19 +57,34 @@ class DefaultController extends Controller
             'species' => $species,
             'homeworlds' => $homeworlds,
         ]);
-
-
-        // replace this example code with whatever you need
-        return $this->render('default/choiceshtml.twig');
     }
     /**
      * @Route("/objectum_sexual ", name="objectum_sexual")
+     * @Method({"GET","POST"})
      */
     public function objectumSexualAction(Request $request)
     {
+        $charactersManager = new Characters();
+        $allCharacters = $charactersManager->getAll();
 
-        // replace this example code with whatever you need
-        return $this->render('default/objectum_sexual.html.twig');
+        if (!empty($_POST['affiliations'])) {
+            $characters = $charactersManager->getExtractByAffiliation($allCharacters,$_POST['affiliations']);
+            if (!empty($_POST['height'])) {
+                $characters = $charactersManager->getAllDifferentByHeight($characters,$_POST['height']);
+            }
+            if (!empty($_POST['mass'])) {
+                $characters = $charactersManager->getAllDifferentByMass($characters, $_POST['mass']);
+            }
+            return $this->render('default/choices.html.twig', [
+                'characters' => $characters,
+            ]);
+        }
+
+        $species = $charactersManager->getValuesByParameter($allCharacters,'species');
+
+        return $this->render('default/objectum_sexual.html.twig', [
+            'species' => $species,
+        ]);
     }
     /**
      * @Route("/forbidden", name="forbidden")

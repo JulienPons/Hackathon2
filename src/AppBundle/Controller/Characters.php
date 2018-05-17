@@ -43,9 +43,9 @@ class Characters
         foreach ($characters as $key => $character) {
             if (!empty($characters[$key]['homeworld'])) {
                 if (is_array($characters[$key]['homeworld'])) {
-                    $characters[$key]['lastHomeworld'] = $characters[$key]['homeworld'][count($characters[$key]['homeworld'])-1];
+                    $characters[$key]['lastHomeworld'] = strtolower($characters[$key]['homeworld'][count($characters[$key]['homeworld'])-1]);
                 } else {
-                    $characters[$key]['lastHomeworld'] = $characters[$key]['homeworld'];
+                    $characters[$key]['lastHomeworld'] = strtolower($characters[$key]['homeworld']);
                 }
             }
         }
@@ -104,7 +104,7 @@ class Characters
 
     /**
      * return all possible characters that have a specific string value
-     *      for a specified first level paramater
+     *      for a specified first level parameter
      *
      * @param array $characters
      * @param string $parameter
