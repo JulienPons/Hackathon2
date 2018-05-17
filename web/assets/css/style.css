@@ -27,3 +27,81 @@
 }
 
 /* Fin de Feuille de style Matches */
+
+
+/* Début de Feuille de style Profile */
+body, html {
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.bg-img {
+    /* The image used */
+    /*background-image: url("https://www.w3schools.com/howto/img_nature.jpg");*/
+    background-image: url("https://i.imgur.com/PaPJONt.jpg");
+
+
+    /* Control the height of the image */
+    min-height: 400px;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Add styles to the form container */
+.FormDavid {
+    position: absolute;
+    left: 40%;
+    margin: 20px;
+    max-width: 320px;
+    padding: 16px;
+    background-color: white;
+    opacity: 0.8;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Set a style for the submit button */
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.btn:hover {
+    opacity: 1;
+}
+
+
+input[type=text] {
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+    width: 100%;
+}
+/* Fin de Feuille de style Profile */
