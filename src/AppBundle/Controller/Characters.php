@@ -218,7 +218,7 @@ class Characters
     }
 
     /**
-     * select characters with a very different size
+     * select characters with a very different height
      *
      * @param array $characters
      * @param float $height
@@ -230,6 +230,25 @@ class Characters
         $newCharacters = [];
         foreach ($characters as $character) {
             if (!empty($character['height']) && ( ($height / $character['height']) > 1.125 || ($height / $character['height']) < 0.8 )) {
+                $newCharacters[] = $character;
+            }
+        }
+        return $newCharacters;
+    }
+
+    /**
+     * select characters with a very different mass
+     *
+     * @param array $characters
+     * @param float $mass
+     *
+     * @return array
+     */
+    public function getAllDifferentByMass(array $characters, float $mass) : array
+    {
+        $newCharacters = [];
+        foreach ($characters as $character) {
+            if (!empty($character['mass']) && ( ($mass / $character['mass']) > 3 || ($mass / $character['mass']) < 0.33 )) {
                 $newCharacters[] = $character;
             }
         }
