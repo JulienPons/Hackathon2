@@ -37,30 +37,30 @@ class DefaultController extends Controller
         $charactersManager = new Characters();
         $allCharacters = $charactersManager->getAll();
 
-        if (!empty($_POST['affiliations'])) {
-            $characters = $charactersManager->getExtractByAffiliation($allCharacters,$_POST['affiliations']);
-            if (!empty($_POST['height'])) {
-                $characters = $charactersManager->getAllDifferentByHeight($characters,$_POST['height']);
+        if (!empty($_POST['species'])) {
+            $characters = $charactersManager->getExtractByParameterAndValue($allCharacters,'species',$_POST['species']);
+            if (!empty($_POST['gender'])) {
+                $characters = $charactersManager->getExtractByParameterAndValue($characters,'gender',$_POST['gender']);
             }
-            if (!empty($_POST['mass'])) {
-                $characters = $charactersManager->getAllDifferentByMass($characters, $_POST['mass']);
+            if (!empty($_POST['lastHomeworld'])) {
+                $characters = $charactersManager->getExtractByParameterAndValue($characters,'lastHomeworld',$_POST['lastHomeworld']);
             }
-            return $this->render('default/xenophiliac.html.twig', [
+            return $this->render('default/choices.html.twig', [
                 'characters' => $characters,
             ]);
         }
 
         $species = $charactersManager->getValuesByParameter($allCharacters,'species');
-        $homeworld = $charactersManager->getValuesByParameter($allCharacters,'homeworld');
+        $homeworlds = $charactersManager->getValuesByParameter($allCharacters,'lastHomeworld');
 
         return $this->render('default/xenophiliac.html.twig', [
             'species' => $species,
-            'homeworld' => $homeworld,
+            'homeworlds' => $homeworlds,
         ]);
 
 
         // replace this example code with whatever you need
-        return $this->render('default/xenophiliac.html.twig');
+        return $this->render('default/choiceshtml.twig');
     }
     /**
      * @Route("/objectum_sexual ", name="objectum_sexual")
@@ -104,7 +104,7 @@ class DefaultController extends Controller
      */
     public function soulmateAction(Request $request)
     {
-        // replace this example code with whatever you need
+
         return $this->render('default/soulmate.html.twig');
     }
 
@@ -118,6 +118,7 @@ class DefaultController extends Controller
     
         return $this->render('default/choices.html.twig', [
             'characters' => $characters,
+            
         ]);
     }
 

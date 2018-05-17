@@ -11,3 +11,22 @@ $(document).ready(function(){
     $('.bg').parallax("0%", 0.3);
     $('#third').parallax("50%", 0.3);
 })
+
+/* range selector */
+console.clear();
+
+var app = new Vue({
+    el: '.wrapper',
+    data: {
+        value: 10
+    },
+    computed: {
+        total: function () {
+            return this.value * 10
+        }
+    }
+});
+
+/*  Feuille match */
+
+$

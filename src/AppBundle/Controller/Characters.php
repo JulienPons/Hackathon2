@@ -33,12 +33,23 @@ class Characters
         foreach ($characters as $key => $character) {
             if (!empty($characters[$key]['affiliations'])) {
                 if (is_array($characters[$key]['affiliations'])) {
-                    $characters[$key]['lastAf   filiation'] = $characters[$key]['affiliations'][count($characters[$key]['affiliations'])-1];
+                    $characters[$key]['lastAffiliation'] = $characters[$key]['affiliations'][count($characters[$key]['affiliations'])-1];
                 } else {
                     $characters[$key]['lastAffiliation'] = $characters[$key]['affiliations'];
                 }
             }
         }
+        
+        foreach ($characters as $key => $character) {
+            if (!empty($characters[$key]['homeworld'])) {
+                if (is_array($characters[$key]['homeworld'])) {
+                    $characters[$key]['lastHomeworld'] = $characters[$key]['homeworld'][count($characters[$key]['homeworld'])-1];
+                } else {
+                    $characters[$key]['lastHomeworld'] = $characters[$key]['homeworld'];
+                }
+            }
+        }
+        
         return $characters;
     }
 
@@ -215,6 +226,7 @@ class Characters
         }
         sort($values);
         return $values;
+
     }
 
     /**
@@ -229,7 +241,7 @@ class Characters
     {
         $newCharacters = [];
         foreach ($characters as $character) {
-            if (!empty($character['height']) && ( ($height / $character['height']) > 1.11 || ($height / $character['height']) < 0.8 )) {
+            if (!empty($character['height']) && ( ($height / $character['height']) > 1.11 || ($height / $character['height']) < 0.9 )) {
                 $newCharacters[] = $character;
             }
         }

@@ -3,7 +3,7 @@
 {% block header %}
 
     <header>
-        <h1 class="logo-dare">DARE !</h1>
+        <a href="/"><h1 class="logo-dare">DARE !</h1></a>
     </header>
 
 {% endblock %}
@@ -13,9 +13,9 @@
     <div class="container-fluid">
         <div class="bg-img">
             <div class="d-flex justify-content-center container mt-5">
-                <form action="">
+                <form action="" method="post">
                     <div class="container FormDavid">
-                        <h1>Want to meet the same specie ?</h1>
+                        <h1>Want to meet the same specie?</h1>
                         <h4 class="text-secondary font-italic">Fill out the following form</h4>
 
                         <div class>
@@ -40,7 +40,7 @@
                         </div>
 
                         <div class>
-                            <label for="name"><b>Select a homeworld</b></label>
+                            <label for="homeworld"><b>Select a homeworld</b></label>
                             <select name="homeworld">
                                 <option value=""></option>
                                 {% for homeworld in homeworlds %}
@@ -51,10 +51,6 @@
                         </div>
 
                         <div>
-
-                            <div>
-
-                            </div>
 
                             <button type="submit" class="btn ProfileButton">Match now </button>
                         </div>

@@ -3,7 +3,7 @@
 {% block header %}
 
     <header>
-        <h1 class="logo-dare">DARE !</h1>
+        <a href="/"><h1 class="logo-dare">DARE !</h1></a>
     </header>
 
 {% endblock %}
@@ -26,10 +26,7 @@
                             </div>
                             <div class="card-body d-inline-flex">
                                 <img class="card-img-top choices-img-fluidmax" src="{{ character.image }}" alt="Card image cap">
-                                <ul>
-                                    <li>
-                                        <h4>Description</h4>
-                                    </li>
+                                <ul class="text-left">
                                     <li>
                                         <h6>Gender: {{ character.gender }}</h6>
                                     </li>
@@ -39,6 +36,7 @@
                                     <li>
                                         <h6>Eye color: {{ character.eyeColor }}</h6>
                                     </li>
+
                                     {% if character.height is defined %}
                                     <li>
                                         <h6>Height: {{ character.height }} m</h6>
@@ -54,9 +52,9 @@
                                         <h6>Hair color: {{ character.hairColor }}</h6>
                                     </li>
                                     {% endif %}
-                                    {% if character.homeworld is defined %}
+                                    {% if character.lastHomeworld is defined %}
                                     <li>
-                                        <h6>Homeworld: </h6>
+                                        <h6>Homeworld: {{ character.lastHomeworld }}</h6>
                                     </li>
                                     {% endif %}
                                     {% if character.bornLocation is defined %}
@@ -64,11 +62,12 @@
                                         <h6>Born location: {{ character.bornLocation }}</h6>
                                     </li>
                                     {% endif %}
-                                    {% if character.affiliations is defined %}
+                                    {% if character.lastAffiliation is defined %}
                                     <li>
-                                        <h6>Affiliations: </h6>
+                                        <h6>Affiliations: {{ character.lastAffiliation }}</h6>
                                     </li>
                                     {% endif %}
+
                                     <ol class="p-0">
                                         <a class="btn btn-primary" href="/matches/{{ character.id }}"><i class="fas fa-pencil-alt mr-2"></i>Choose</a>
                                     </ol>

@@ -389,11 +389,7 @@ h2 {
 }*/
 
 .ligne1{
-    height: 70vh;
-}
-
-.ligne2{
-    height: 30vh;
+    height: 100vh;
 }
 
 .bg01{
@@ -417,6 +413,18 @@ h2 {
 
 .frontSeizeCard{
     font-size: 0.9rem;
+    font: bold;
+}
+
+.siezeCardMatch{
+    height: 100%;
+}
+
+.chat{
+    height: 83vh;
+    border: 1px solid white;
+    background-color: rgba(255,255,255,0.5);
+    margin-top: 10px ;
 }
 
 
@@ -488,6 +496,7 @@ h2 {
 .choices-card {
     background-color: rgb(150, 150, 150);
     border-radius: 0.25rem;
+    width: 425px;
 }
 .bg-grey-choices {
     background-color: rgb(150, 150, 150);
@@ -498,12 +507,13 @@ h2 {
 }
 
 .bg-choices{
-    background-image: url("https://images8.alphacoders.com/401/401478.jpg");
+    background: url("https://images8.alphacoders.com/401/401478.jpg") no-repeat fixed;
+    background-size: 100% 100%;
+
 }
 
 .choices-img-fluidmax{
-    width: auto;
-    max-height: 100%;
+   
 }
 
 .no-border-choices {
@@ -535,6 +545,12 @@ h2 {
     right: 0;
     margin: auto;
 }
+
+.wrapper{
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+}
 /* Fin CSS Page Soulmate */
 
 /* Début de Feuille de style Profile */
@@ -553,10 +569,10 @@ body, html {
 
 
     /* Control the height of the image */
-    min-height: 1000px;
+    height: 100vh;
+    width: 100vw;
 
     /* Center and scale the image nicely */
-    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -624,3 +640,28 @@ input[type=text]:focus {
 }
 /* Fin de Feuille de style Profile */
 
+
+/* forbidden */
+.input-hidden {
+    position: absolute;
+    left: -9999px;
+}
+
+input[type=radio]:checked + label>img {
+    border: 1px solid #fff;
+    box-shadow: 0 0 3px 3px #090;
+}
+
+/* Stuff after this is only to make things more pretty */
+input[type=radio] + label>img {
+    border: 1px none #444;
+    width: 150px;
+    height: 150px;
+    transition: 500ms all;
+}
+
+input[type=radio]:checked + label>img {
+    transform:
+            rotateZ(-10deg)
+            rotateX(10deg);
+}
