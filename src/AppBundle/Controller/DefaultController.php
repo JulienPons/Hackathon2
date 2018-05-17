@@ -117,7 +117,6 @@ class DefaultController extends Controller
     {
         $charactersManager = new Characters();
         $allCharacters = $charactersManager->getAll();
-//        $empireCharacters = $charactersManager->getExtractByAffiliation($allCharacters,'Republic');
         $characters = $charactersManager->getExtractByParametersAndValues($allCharacters, 'species',['human','droid']);
 
         return $this->render('default/test.html.twig', [

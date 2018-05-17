@@ -189,60 +189,32 @@ class Characters
     public function getExtractByParametersAndValues(array $characters, $parameters, $values) : array
     {
         $charactersManager = new Characters();
-        $newCharacters = [];
+        $newCharacters = $characters;
         if (is_array($parameters)) {
             foreach ($parameters as $parameter) {
                 if (is_array($values)) {
                     foreach ($values as $value) {
-                        $tempCharacters = $charactersManager
-                            ->getExtractByParameterAndValue($characters, $parameter, $value);
-                        $newcharacters = $charactersManager->setExtractByDuplicates($newCharacters, $tempCharacters);
+                        $tempCharacters = $charactersManager->getExtractByParameterAndValue($newCharacters, $parameter, $value);
+                        $newCharacters = $charactersManager->setExtractByDuplicates($newCharacters, $tempCharacters);
                     }
                 } else {
-                    $tempCharacters = $charactersManager
-                        ->getExtractByParameterAndValue($characters, $parameter, $values);
-                    $newcharacters = $charactersManager->setExtractByDuplicates($newCharacters, $tempCharacters);
+                    $tempCharacters = $charactersManager->getExtractByParameterAndValue($newCharacters, $parameter, $values);
+                    $newCharacters = $charactersManager->setExtractByDuplicates($newCharacters, $tempCharacters);
                 }
             }
         } else {
             if (is_array($values)) {
                 foreach ($values as $value) {
-                    $tempCharacters = $charactersManager
-                        ->getExtractByParameterAndValue($characters, $parameters, $value);
-                    $newcharacters = $charactersManager->setExtractByDuplicates($newCharacters, $tempCharacters);
+                    $tempCharacters = $charactersManager->getExtractByParameterAndValue($newCharacters, $parameters, $value);
+                    $newCharacters = $charactersManager->setExtractByDuplicates($newCharacters, $tempCharacters);
                 }
             } else {
-                $tempCharacters = $charactersManager
-                    ->getExtractByParameterAndValue($characters, $parameters, $values);
-                $newcharacters = $charactersManager->setExtractByDuplicates($newCharacters, $tempCharacters);
+                $tempCharacters = $charactersManager->getExtractByParameterAndValue($newCharacters, $parameters, $values);
+                $newCharacters = $charactersManager->setExtractByDuplicates($newCharacters, $tempCharacters);
             }
         }
 
         return $newCharacters;
     }
-
-    /*    public function getAllByParameter($key, $value) : array
-        {
-            $allCharacters = new Characters();
-            $characters = $allCharacters->getAll();
-
-            $newCharacters = [];
-            foreach ($characters as $id => $character) {
-                for ($i = 0; $i < count($character); $i++) {
-                    if (isset($character[$key])) {
-                        if (is_array($character[$key])) {
-                            for ($j = count($character[$key]) - 1; $j >= 0; $j++) {
-
-                            }
-                        } else {
-                            $newCharacters[] = $character;
-                        }
-                    }
-                }
-            }
-
-            return $this->characters;
-        }
-    */
 
 }
