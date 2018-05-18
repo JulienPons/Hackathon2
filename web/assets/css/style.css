@@ -128,7 +128,7 @@ nav {
     font-family: Open Sans;
     color: white;
     position: fixed;
-    transform: translatex(-100%);
+    transform: translatex(-150%);
     transition: transform 0.2s ease;
     top: 260px;
     bottom: 0px;
@@ -442,7 +442,7 @@ h2 {
 .credit-background {
     width: 100%;
     height: 100%;
-    background: #000;
+    background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/YWAdzU2/night-sky-005-a-star-field-twinkles-in-a-night-sky-loop_hf3owvebl_thumbnail-full01.png");
     overflow: hidden;
 }
 
@@ -474,7 +474,7 @@ h2 {
     position: relative;
     top: 99999px;
     transform-origin: 50% 100%;
-    animation: crawl 20s linear;
+    animation: crawl 40s linear;
 }
 
 .crawl > .title {
@@ -667,11 +667,24 @@ input[type=radio]:checked + label>img {
     height: 600px;
 }
 .gif2{
-    display: block;
+    display: none;
     margin-top: 50px;
     margin-right: auto;
     margin-left: auto;
     width: 400px;
     height: 300px;
     border-radius: 15px;
+}
+
+.credit-title{
+    font-size: 150px;
+    text-decoration: bold;
+}
+
+.reponse-d{
+    background-color: black;
+    background: url("https://cms-assets.tutsplus.com/uploads/users/30/posts/21904/image/404.jpg") no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
 }

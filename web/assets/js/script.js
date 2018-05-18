@@ -30,3 +30,12 @@ var app = new Vue({
 /*  Feuille match */
 
 $
+
+
+/* Apparition gif2 */
+
+$(document).ready(function () {
+    $('.soulmate').click(function () {
+        $('.gif2').css('display', 'block');
+    });
+});
