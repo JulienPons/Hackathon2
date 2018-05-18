@@ -168,6 +168,7 @@ class DefaultController extends Controller
         $dislike = ['https://conceitedcrusade.files.wordpress.com/2015/09/star-wars.jpg?w=940',
             'https://media1.tenor.com/images/3fb8c3f4b562f15cc8462f4cf11f84e0/tenor.gif?itemid=8367915',
             'http://farm6.static.flickr.com/5475/10726150653_dc2d09dcc2.jpg',
+            'https://i.ytimg.com/vi/FL7V8gnvKE0/maxresdefault.jpg',
             ];
         shuffle($dislike);
         $random = [$like[0],$dislike[0]];
