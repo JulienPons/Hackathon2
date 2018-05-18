@@ -22,7 +22,7 @@
                             <div class="card-header">
                                 <img class="imgSeize" src="{{ character.image }}" alt="Card image cap">
                             </div>
-                            <li class="list-group-item p-1 frontSeizeCard text-left bg-grey-choices text-center text-white">
+                            <li class="list-group-item p-1 frontSeizeCard text-left bg-grey-choices text-center text-white h5match">
                                 {% if character.height is defined %}
                                     Height: {{ character.height }} m <br>
                                 {% endif %}
@@ -65,7 +65,7 @@
                 <div class="col-md-5 text-center p-0 m-3 mt-5">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="text-white">MATCH OR NOT MATCH</h1>
+                            <h1 class="text-white h5match">MATCH OR NOT MATCH</h1>
                             <img src="{{ result }}" class="img-thumbnail">
                         </div>
                     </div>

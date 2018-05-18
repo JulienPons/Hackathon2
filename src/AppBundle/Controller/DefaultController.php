@@ -40,7 +40,7 @@ class DefaultController extends Controller
         if (!empty($_POST['species'])) {
             $characters = $charactersManager->getExtractByParameterAndInverseOfValue($allCharacters,'species',$_POST['species']);
             if (!empty($_POST['gender'])) {
-                $characters = $charactersManager->getExtractByParameterAndValue($characters,'gender',$_POST['gender']);
+                $characters = $charactersManager->getExtractByParameterAndExactValue($characters,'gender',$_POST['gender']);
             }
             if (!empty($_POST['lastHomeworld'])) {
                 $characters = $charactersManager->getExtractByParameterAndValue($characters,'lastHomeworld',$_POST['lastHomeworld']);
@@ -162,12 +162,15 @@ class DefaultController extends Controller
         $like = ['https://i2.wp.com/biofuelsinternationalexpo.com/wp-content/uploads/2018/02/star-wars-gifts-for-him-starwars-love-gift.jpg?w=720&ssl=1',
             'http://www.sparklyprettybriiiight.com/wp-content/uploads/2013/08/Galactic-Love-true-love-HERO.jpg',
             'https://i.pinimg.com/originals/04/8d/58/048d58b83fc711111f347a69fd9f7a4c.jpg',
-            'https://www.amscan-europe.com/graphics_cache/7/9/16241-3430401-3-600.jpg'
+            'https://www.amscan-europe.com/graphics_cache/7/9/16241-3430401-3-600.jpg',
+            'https://www.tuxboard.com/photos/2015/12/livre-star-wars-kama-sutra-non-officiel-erotique-positions-sexuelles.jpg',
+            'https://technabob.com/blog/wp-content/uploads/2015/12/star_wars_kama_sutra_3.jpg'
         ];
         shuffle($like);
         $dislike = ['https://conceitedcrusade.files.wordpress.com/2015/09/star-wars.jpg?w=940',
             'https://media1.tenor.com/images/3fb8c3f4b562f15cc8462f4cf11f84e0/tenor.gif?itemid=8367915',
             'http://farm6.static.flickr.com/5475/10726150653_dc2d09dcc2.jpg',
+            'https://i.ytimg.com/vi/FL7V8gnvKE0/maxresdefault.jpg',
             ];
         shuffle($dislike);
         $random = [$like[0],$dislike[0]];

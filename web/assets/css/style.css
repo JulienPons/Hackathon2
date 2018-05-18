@@ -128,7 +128,7 @@ nav {
     font-family: Open Sans;
     color: white;
     position: fixed;
-    transform: translatex(-100%);
+    transform: translatex(-150%);
     transition: transform 0.2s ease;
     top: 260px;
     bottom: 0px;
@@ -433,6 +433,10 @@ h2 {
     margin-top: 10px ;
 }
 
+.h5match{
+    font-family: 'Poller One', cursive;
+}
+
 
 /* Fin de Feuille de style Matches */
 
@@ -441,7 +445,7 @@ h2 {
 .credit-background {
     width: 100%;
     height: 100%;
-    background: #000;
+    background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/YWAdzU2/night-sky-005-a-star-field-twinkles-in-a-night-sky-loop_hf3owvebl_thumbnail-full01.png");
     overflow: hidden;
 }
 
@@ -473,7 +477,7 @@ h2 {
     position: relative;
     top: 99999px;
     transform-origin: 50% 100%;
-    animation: crawl 20s linear;
+    animation: crawl 40s linear;
 }
 
 .crawl > .title {
@@ -578,13 +582,20 @@ body, html {
     /*position: absolute;
     left: 35%;
     top:50%;*/
-    margin: 20px;
+    margin: 50px;
     max-width: 600px;
     padding: 50px;
-    background-color: white;
+    /*background-color: white;*/
+    background-color: rgba(150, 150, 150,0.8);
     opacity: 1;
     box-shadow: 1px 1px 30px rgba(255, 255, 255, 255);
     border-radius: 10% / 50%;
+    color:white;
+
+}
+.SubtitleForbidden{
+    color:black;
+    font-weight: bold;
 }
 
 .empireDavid{
@@ -614,6 +625,7 @@ input[type=text]:focus, input[type=password]:focus {
     cursor: pointer;
     width: 100%;
     opacity: 0.9;
+    margin-top:20px;
 }
 
 .ProfileButton:hover {
@@ -635,6 +647,7 @@ input[type=text]:focus {
 
 .ButtonBackground{
     background-color: #008000;
+
 }
 
 /* forbidden */
@@ -666,7 +679,7 @@ input[type=radio]:checked + label>img {
     height: 600px;
 }
 .gif2{
-    display: block;
+    display: none;
     margin-top: 50px;
     margin-right: auto;
     margin-left: auto;
@@ -674,3 +687,22 @@ input[type=radio]:checked + label>img {
     height: 300px;
     border-radius: 15px;
 }
+
+
+.tagline{
+    font-size: 1.5em;
+}
+=======
+.credit-title{
+    font-size: 150px;
+    text-decoration: bold;
+}
+
+.reponse-d{
+    background-color: black;
+    background: url("https://cms-assets.tutsplus.com/uploads/users/30/posts/21904/image/404.jpg") no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
