@@ -44,7 +44,7 @@
                                 {% endif %}
 
                                 {% if character.homeworld is defined %}
-                                    Homeworld: {{ character.homeworld }} <br>
+                                    Homeworld: {{ homeworld }} <br>
                                 {% endif %}
 
                                 {% if character.bornLocation is defined %}
@@ -74,7 +74,8 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <p class="chat"></p>
+
+                            <img src="{{ result }}">
                         </div>
                     </div>
                 </div>

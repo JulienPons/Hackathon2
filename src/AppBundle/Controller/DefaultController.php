@@ -147,11 +147,40 @@ class DefaultController extends Controller
         $character = $charactersManager->getOneByID($id);
         $affiliations = end($character['affiliations']);
 
+        if (!empty($character['homeworld'])) {
+            if (is_array($character['homeworld'])) {
+                $homeworld = end($character['affiliations']);//$character['lastHomeworld'] = strtolower($character['homeworld'][count($character['homeworld'])-1]);
+            } else {
+                $homeworld = $character['lastHomeworld'] = strtolower($character['homeworld']);
+            }
+        }
 
+        $q1 = ['https://www.google.fr/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fc%2Fc2%2FCoeur.svg%2F1276px-Coeur.svg.png&imgrefurl=https%3A%2F%2Ffr.wikipedia.org%2Fwiki%2FFichier%3ACoeur.svg&docid=EqwMN3kwUBM2uM&tbnid=gLPN1BjAecUtYM%3A&vet=10ahUKEwj-jdr38Y7bAhVDcRQKHVUUDAgQMwg9KAAwAA..i&w=1276&h=1024&bih=785&biw=1535&q=coeur%20svg&ved=0ahUKEwj-jdr38Y7bAhVDcRQKHVUUDAgQMwg9KAAwAA&iact=mrc&uact=8',
+            'https://www.google.fr/imgres?imgurl=http%3A%2F%2Fdata.over-blog-kiwi.com%2F0%2F74%2F83%2F45%2F20160613%2Fob_8e6ce9_coeur-fleuri.svg&imgrefurl=http%3A%2F%2Flegeckobleu.over-blog.com%2Ftag%2Fdecoupes%2F&docid=OjVCPsQkSLL1nM&tbnid=7MYgqgYFu01wJM%3A&vet=10ahUKEwj-jdr38Y7bAhVDcRQKHVUUDAgQMwhBKAQwBA..i&w=457&h=408&bih=785&biw=1535&q=coeur%20svg&ved=0ahUKEwj-jdr38Y7bAhVDcRQKHVUUDAgQMwhBKAQwBA&iact=mrc&uact=8'
+        ];
+        shuffle($q1);
+        $like = ['https://i0.wp.com/l-express.ca/wp-content/uploads/2018/02/coeur2.jpg?fit=585%2C439&ssl=1',
+            'http://www.goodies-by-sportcam.com/images/Image/COEUR-COEUR1.png',
+            'https://www.telefleurs.fr/Products/340x340/AA081710M.jpg'
+        ];
+        shuffle($like);
+        $dislike = ['http://www.infirmiers.com/images/actualites/actualites/coeur-brise-explose-g.jpg',
+            'http://idata.over-blog.com/3/77/90/51/je-t-aime-pas.jpg',
+            'https://i.skyrock.net/6011/86816011/pics/3166880846_1_2_r4FmXtKg.jpg',
+            ];
+        shuffle($dislike);
+        $random = [$like[0],$dislike[0]];
+        shuffle($random);
+        $affichageResult = $random[0];
+
+        $afficheQ1='';
         // replace this example code with whatever you need
         return $this->render('default/matches.html.twig',[
             'character' => $character,
-            'affiliations' => $affiliations
+            'affiliations' => $affiliations,
+            'homeworld' => $homeworld,
+            'afficheQ1' =>$afficheQ1,
+            'result' => $affichageResult,
         ]);
     }
 
