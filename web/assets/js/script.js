@@ -27,12 +27,6 @@ var app = new Vue({
     }
 });
 
-/*  Feuille match */
-
-$
-
-
-
 
 /*  son R2D2 */
 $("a.question[href]").click(function(e){
@@ -44,4 +38,5 @@ $("a.question[href]").click(function(e){
         }, 1500);
     }
 });
+
 

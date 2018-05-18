@@ -3,7 +3,7 @@
 {% block header %}
 
     <header>
-        <a href="/"><h1 class="logo-dare">DARE !</h1></a>
+        <a href="/"><h1 class="logo-dare">DARE!</h1></a>
     </header>
 
 {% endblock %}
@@ -18,30 +18,47 @@
                         <h1>Want to meet the same specie?</h1>
                         <h4 class="text-secondary font-italic">Fill out the following form</h4>
 
-                        <div class>
-                            <label for="species"><b>Select your specie</b></label>
-                            <select name="species">
+                        <div class="row align-text-center">
+                            <label for="species" class="col-5 mt-3"><b>Select your specie</b></label>
+                            <select name="species" class="col-7">
                                 <option value=""></option>
                                 {% for specie in species %}
                                     <option value="{{ specie }}">{{ specie }}</option>
                                 {% endfor %}
                             </select>
                         </div>
-                        <div class>
-                            <label for="name"><b>Select a gender</b></label>
-                            <input type="radio" id="contactChoice1"
-                                   name="contact" value="male">
-                            <label for="contactChoice1">Male</label>
 
-                            <input type="radio" id="contactChoice2"
-                                   name="contact" value="female">
-                            <label for="contactChoice2">Female</label>
-
+                        <div class="row content-justify-center">
+                            <p class="empireDavid mb-2 mt-4 d-block col-12">What is your gender?</p>
+                        </div>
+                        <div class="row content-justify-center">
+                            <div class="col-5">
+                                <input
+                                        type="radio" name="contact"
+                                        id="contactChoice1" class="input-hidden"
+                                        value="male" />
+                                <label for="contactChoice1">
+                                    <img
+                                            src="{{ asset('assets/image/500px-Male_Icon.svg.png') }}"
+                                            alt="contactChoice1" />
+                                </label>
+                            </div>
+                            <div class="col-5">
+                                <input
+                                        type="radio" name="contact"
+                                        id="contactChoice2" class="input-hidden"
+                                        value="female" />
+                                <label for="contactChoice2">
+                                    <img
+                                            src="{{ asset('assets/image/500px-Female_Icon.svg.png') }}"
+                                            alt="contactChoice2" />
+                                </label>
+                            </div>
                         </div>
 
-                        <div class>
-                            <label for="homeworld"><b>Select a homeworld</b></label>
-                            <select name="homeworld">
+                        <div class="row align-text-center">
+                            <label class="col-5 mt-3" for="lastHomeworld"><b>Select a homeworld</b></label>
+                            <select class="col-7" name="lastHomeworld">
                                 <option value=""></option>
                                 {% for homeworld in homeworlds %}
                                     <option value="{{ homeworld }}">{{ homeworld }}</option>
@@ -51,8 +68,7 @@
                         </div>
 
                         <div>
-
-                            <button type="submit" class="btn ProfileButton">Match now </button>
+                            <button type="submit" class="btn ProfileButton ButtonBackground">Match now </button>
                         </div>
                 </form>
             </div>
