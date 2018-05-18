@@ -582,10 +582,16 @@ body, html {
     margin: 20px;
     max-width: 600px;
     padding: 50px;
-    background-color: white;
+    /*background-color: white;*/
+    background-color: rgba(150, 150, 150,0.8);
     opacity: 1;
     box-shadow: 1px 1px 30px rgba(255, 255, 255, 255);
     border-radius: 10% / 50%;
+    color:white;
+}
+.SubtitleForbidden{
+    color:black;
+    font-weight: bold;
 }
 
 .empireDavid{
@@ -636,6 +642,7 @@ input[type=text]:focus {
 
 .ButtonBackground{
     background-color: #008000;
+
 }
 
 /* forbidden */
@@ -674,4 +681,8 @@ input[type=radio]:checked + label>img {
     width: 400px;
     height: 300px;
     border-radius: 15px;
+}
+
+.tagline{
+    font-size: 1.5em;
 }
