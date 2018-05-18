@@ -162,7 +162,9 @@ class DefaultController extends Controller
         $like = ['https://i2.wp.com/biofuelsinternationalexpo.com/wp-content/uploads/2018/02/star-wars-gifts-for-him-starwars-love-gift.jpg?w=720&ssl=1',
             'http://www.sparklyprettybriiiight.com/wp-content/uploads/2013/08/Galactic-Love-true-love-HERO.jpg',
             'https://i.pinimg.com/originals/04/8d/58/048d58b83fc711111f347a69fd9f7a4c.jpg',
-            'https://www.amscan-europe.com/graphics_cache/7/9/16241-3430401-3-600.jpg'
+            'https://www.amscan-europe.com/graphics_cache/7/9/16241-3430401-3-600.jpg',
+            'https://www.tuxboard.com/photos/2015/12/livre-star-wars-kama-sutra-non-officiel-erotique-positions-sexuelles.jpg',
+            'https://technabob.com/blog/wp-content/uploads/2015/12/star_wars_kama_sutra_3.jpg'
         ];
         shuffle($like);
         $dislike = ['https://conceitedcrusade.files.wordpress.com/2015/09/star-wars.jpg?w=940',
