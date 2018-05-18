@@ -30,3 +30,18 @@ var app = new Vue({
 /*  Feuille match */
 
 $
+
+
+
+
+/*  son R2D2 */
+$("a.question[href]").click(function(e){
+    e.preventDefault();
+    if (this.href) {
+        var target = this.href;
+        setTimeout(function(){
+            window.location = target;
+        }, 1500);
+    }
+});
+
