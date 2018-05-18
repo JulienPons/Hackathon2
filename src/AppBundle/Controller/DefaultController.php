@@ -40,7 +40,7 @@ class DefaultController extends Controller
         if (!empty($_POST['species'])) {
             $characters = $charactersManager->getExtractByParameterAndInverseOfValue($allCharacters,'species',$_POST['species']);
             if (!empty($_POST['gender'])) {
-                $characters = $charactersManager->getExtractByParameterAndValue($characters,'gender',$_POST['gender']);
+                $characters = $charactersManager->getExtractByParameterAndExactValue($characters,'gender',$_POST['gender']);
             }
             if (!empty($_POST['lastHomeworld'])) {
                 $characters = $charactersManager->getExtractByParameterAndValue($characters,'lastHomeworld',$_POST['lastHomeworld']);
