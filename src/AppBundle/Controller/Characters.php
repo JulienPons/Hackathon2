@@ -266,4 +266,5 @@ class Characters
         }
         return $newCharacters;
     }
+
 }
