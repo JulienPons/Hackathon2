@@ -146,12 +146,13 @@ class DefaultController extends Controller
         $charactersManager = new Characters();
         $character = $charactersManager->getOneByID($id);
         $affiliations = end($character['affiliations']);
+        $homeworld ='';
 
         if (!empty($character['homeworld'])) {
             if (is_array($character['homeworld'])) {
-                $homeworld = end($character['affiliations']);//$character['lastHomeworld'] = strtolower($character['homeworld'][count($character['homeworld'])-1]);
+                $homeworld = end($character['homeworld']);//$character['homeworld'] = strtolower($character['homeworld'][count($character['homeworld'])-1]);
             } else {
-                $homeworld = $character['lastHomeworld'] = strtolower($character['homeworld']);
+                $homeworld = $character['homeworld'] = strtolower($character['homeworld']);
             }
         }
 
