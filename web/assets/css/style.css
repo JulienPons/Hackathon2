@@ -644,14 +644,9 @@ input[type=text]:focus {
     left: -9999px;
 }
 
-input[type=radio]:checked + label>img {
-    border: 1px solid #fff;
-    box-shadow: 0 0 3px 3px #090;
-}
-
 /* Stuff after this is only to make things more pretty */
 input[type=radio] + label>img {
-    border: 1px none #444;
+    border: none;
     width: 150px;
     height: 150px;
     transition: 500ms all;
@@ -659,8 +654,8 @@ input[type=radio] + label>img {
 
 input[type=radio]:checked + label>img {
     transform:
-            rotateZ(-10deg)
-            rotateX(10deg);
+            rotateZ(-20deg)
+            rotateX(20deg);
 }
 
 .gif{
