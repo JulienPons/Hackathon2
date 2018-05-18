@@ -16,13 +16,13 @@
                 <div class="col-md-5 text-center p-0 m-3 mt-5">
                     <div class="card bg-grey-choices siezeCardMatch">
                         <div class="card-header">
-                            <h5>{{ character.name }}</h5>
+                            <h5 class="text-white">{{ character.name }}</h5>
                         </div>
                         <div class="card-body ">
                             <div class="card-header">
                                 <img class="imgSeize" src="{{ character.image }}" alt="Card image cap">
                             </div>
-                            <li class="list-group-item p-1 frontSeizeCard text-left bg-grey-choices text-center">
+                            <li class="list-group-item p-1 frontSeizeCard text-left bg-grey-choices text-center text-white">
                                 {% if character.height is defined %}
                                     Height: {{ character.height }} m <br>
                                 {% endif %}
@@ -44,7 +44,7 @@
                                 {% endif %}
 
                                 {% if character.homeworld is defined %}
-                                    Homeworld: {{ character.homeworld }} <br>
+                                    Homeworld: {{ homeworld }} <br>
                                 {% endif %}
 
                                 {% if character.bornLocation is defined %}
@@ -65,16 +65,8 @@
                 <div class="col-md-5 text-center p-0 m-3 mt-5">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="input-group">
-                                <p class="form-control">Salut ça va ?</p>
-                                <div class="input-group-append">
-                                    <button class="btn ProfileButton" type="button">OUI !!!</button>
-                                    <button class="btn ProfileButton" type="button">NON !!!</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <p class="chat"></p>
+                            <h1 class="text-white">MATCH OR NOT MATCH</h1>
+                            <img src="{{ result }}" class="img-thumbnail">
                         </div>
                     </div>
                 </div>
