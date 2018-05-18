@@ -159,14 +159,15 @@ class DefaultController extends Controller
             'https://www.google.fr/imgres?imgurl=http%3A%2F%2Fdata.over-blog-kiwi.com%2F0%2F74%2F83%2F45%2F20160613%2Fob_8e6ce9_coeur-fleuri.svg&imgrefurl=http%3A%2F%2Flegeckobleu.over-blog.com%2Ftag%2Fdecoupes%2F&docid=OjVCPsQkSLL1nM&tbnid=7MYgqgYFu01wJM%3A&vet=10ahUKEwj-jdr38Y7bAhVDcRQKHVUUDAgQMwhBKAQwBA..i&w=457&h=408&bih=785&biw=1535&q=coeur%20svg&ved=0ahUKEwj-jdr38Y7bAhVDcRQKHVUUDAgQMwhBKAQwBA&iact=mrc&uact=8'
         ];
         shuffle($q1);
-        $like = ['https://i0.wp.com/l-express.ca/wp-content/uploads/2018/02/coeur2.jpg?fit=585%2C439&ssl=1',
-            'http://www.goodies-by-sportcam.com/images/Image/COEUR-COEUR1.png',
-            'https://www.telefleurs.fr/Products/340x340/AA081710M.jpg'
+        $like = ['https://i2.wp.com/biofuelsinternationalexpo.com/wp-content/uploads/2018/02/star-wars-gifts-for-him-starwars-love-gift.jpg?w=720&ssl=1',
+            'http://www.sparklyprettybriiiight.com/wp-content/uploads/2013/08/Galactic-Love-true-love-HERO.jpg',
+            'https://i.pinimg.com/originals/04/8d/58/048d58b83fc711111f347a69fd9f7a4c.jpg',
+            'https://www.amscan-europe.com/graphics_cache/7/9/16241-3430401-3-600.jpg'
         ];
         shuffle($like);
-        $dislike = ['http://www.infirmiers.com/images/actualites/actualites/coeur-brise-explose-g.jpg',
-            'http://idata.over-blog.com/3/77/90/51/je-t-aime-pas.jpg',
-            'https://i.skyrock.net/6011/86816011/pics/3166880846_1_2_r4FmXtKg.jpg',
+        $dislike = ['https://conceitedcrusade.files.wordpress.com/2015/09/star-wars.jpg?w=940',
+            'https://media1.tenor.com/images/3fb8c3f4b562f15cc8462f4cf11f84e0/tenor.gif?itemid=8367915',
+            'http://farm6.static.flickr.com/5475/10726150653_dc2d09dcc2.jpg',
             ];
         shuffle($dislike);
         $random = [$like[0],$dislike[0]];
