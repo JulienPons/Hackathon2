@@ -410,7 +410,6 @@ h2 {
 
 
 .imgSeize{
-    height: 50vh;
     width: auto;
 }
 
@@ -504,13 +503,13 @@ h2 {
     border-radius: 0.8rem;
 }
 .bg-grey-choices {
-    background-color: rgba(150, 150, 150,0.4);
+    background-color: rgba(150, 150, 150,0.5);
 }
 
 .bg-choices{
     background: url("https://images8.alphacoders.com/401/401478.jpg") no-repeat fixed;
+    min-height: 1000px;
     background-size: 100% 100%;
-
 }
 
 .no-border-choices {

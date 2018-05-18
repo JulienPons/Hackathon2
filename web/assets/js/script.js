@@ -27,15 +27,21 @@ var app = new Vue({
     }
 });
 
-/*  Feuille match */
-
-$
-
-
 /* Apparition gif2 */
 
 $(document).ready(function () {
     $('.soulmate').click(function () {
         $('.gif2').css('display', 'block');
     });
+});
+
+/*  son R2D2 */
+$("a.question[href]").click(function(e){
+    e.preventDefault();
+    if (this.href) {
+        var target = this.href;
+        setTimeout(function(){
+            window.location = target;
+        }, 1500);
+    }
 });
