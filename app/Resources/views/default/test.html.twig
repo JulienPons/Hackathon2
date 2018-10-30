@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% for character in characters %}
+        {% if character.mass is defined %}
+            <div>{{ character.mass }}</div>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

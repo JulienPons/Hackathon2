@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+
+   <header>
+       <a href="/"><h1 class="logo-dare">DARE !</h1></a>
+   </header>
+
+{% endblock %}
+
+{% block body %}
+
+
+
+   <div class="container-fluid">
+               <div class="bg-img">
+                    <form action="/action_page.php">
+                        <div class="container FormDavid">
+                            <h1>Find your ideal partner ?</h1>
+
+                            <div class>
+                                <label for="name"><b>Enter your name</b></label>
+                                <input type="text" placeholder="Enter your name" name="name" required>
+                            </div>
+
+                            <div class>
+                            <label for="name"><b>Select specie you wan't to meet</b></label>
+                                <select name="Style">
+                                    <option value="Droid">Droid</option>
+                                    <option value="Human">Human</option>
+                                    <option value="autre">Other</option>
+                                </select>
+                            </div>
+
+                            <div class>
+
+
+                            </div>
+                            <div>
+
+                            <div>
+
+                            </div>
+
+                            <button type="submit" class="btn ProfileButton">Match now </button>
+                        </div>
+                    </form>
+                </div>
+   </div>
+
+
+
+{% endblock %}
